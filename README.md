@@ -3,6 +3,8 @@
 
 Helm charts for the [Azure/Brigade](https://github.com/Azure/brigade) project
 
+**Under Construction**: Charts are currently being transferred to this repository from other sources.
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
