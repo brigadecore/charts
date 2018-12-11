@@ -1,4 +1,8 @@
 
+# Brigade Charts
+
+Helm charts for the [Azure/Brigade](https://github.com/Azure/brigade) project
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
