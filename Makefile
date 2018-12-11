@@ -42,6 +42,6 @@ index:
 	helm repo index $(SERVE_DIR)
 
 .PHONY: test
-test: test
+test:
 	helm lint $(CHARTS_DIR)/*
 
