@@ -14,6 +14,12 @@ endif
 
 HAS_HELM   := $(shell $(CHECK) helm)
 
+.PHONY: default
+default:
+ifndef HAS_HELM
+	$(error You must install helm)
+endif
+
 # all-charts loops through all charts and runs the make target(s) provided
 define all-charts
 	@for chart in $$(ls -1 $(CHARTS_DIR)); do \
@@ -21,27 +27,23 @@ define all-charts
 	done
 endef
 
-.PHONY: default
-default:
-ifndef HAS_HELM
-	$(error You must install helm)
-endif
-
 .PRECIOUS: build
 .PHONY: build
 build:
 ifndef CHART
 	$(call all-charts,build)
-	@make index
 else 
 	helm package -d $(SERVE_DIR) $(CHARTS_DIR)/$(CHART)
+endif
+
+.PHONY: test
+test:
+ifndef CHART
+	$(call all-charts,test)
+else 
+	helm lint $(CHARTS_DIR)/$(CHART)
 endif
 
 .PHONY: index
 index:
 	helm repo index $(SERVE_DIR)
-
-.PHONY: test
-test:
-	helm lint $(CHARTS_DIR)/*
-

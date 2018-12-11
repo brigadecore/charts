@@ -7,7 +7,8 @@ class HelmJob {
     this.name = name;
     this.image = "dtzar/helm-kubectl:latest";
     this.tasks = [
-      "apk upgrade && apk add --update --no-cache make",
+      "apk upgrade 1>/dev/null",
+      "apk add --update --no-cache make 1>/dev/null",
       "cd /src"
     ]
     this.job = new Job(this.name, this.image);

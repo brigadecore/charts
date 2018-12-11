@@ -182,7 +182,7 @@ entries:
   brigade-github-app:
   - apiVersion: v1
     created: 2018-12-11T12:18:26.644926-07:00
-    description: The Brigade GitHub App, an adnvanced gateway for GitHub
+    description: The Brigade GitHub App, an advanced gateway for GitHub
     digest: c65bfddb417f552024a384a42a86edd3459a9426ae8016d181db736d7f4b0893
     name: brigade-github-app
     urls:
