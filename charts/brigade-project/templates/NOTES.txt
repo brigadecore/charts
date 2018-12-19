@@ -7,3 +7,12 @@ This is a brigade project for {{ .Values.repository }}
 To check it's state, run:
 
   helm status {{.Release.Name}}
+
+NOTE: The Helm repo URL serving this chart has changed to: https://azure.github.io/brigade-charts
+
+All subsequent chart releases will be served at this URL.
+
+Please update your local Helm repo:
+
+  helm repo remove brigade
+  helm repo add brigade https://azure.github.io/brigade-charts

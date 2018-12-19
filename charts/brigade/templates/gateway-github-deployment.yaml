@@ -18,6 +18,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: {{ template "brigade.fullname" . }}
+        app: {{ template "brigade.fullname" . }}
         role: gateway
         type: github
     spec:
