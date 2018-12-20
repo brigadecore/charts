@@ -3,6 +3,7 @@ entries:
   brigade:
   - apiVersion: v1
     appVersion: v0.19.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.13283105-06:00
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: b006d4b0ee52d0a74abdec4f825bdccdb50f6f2daeec2f21205daea7717af3c4
@@ -13,15 +14,31 @@ entries:
   - apiVersion: v1
     appVersion: v0.19.0
     created: 2018-12-20T17:47:16.132355786-06:00
+=======
+    created: 2018-12-20T12:03:28.660374-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
-    digest: 9f8a707e90d084b9c6eea314fc6f580546206f75edd871dc62289f30ca8dc10a
+    digest: 588f05c6b71cd49d6d96bc3ad18c71590ac34a2c758bdb61de1e987d8dcc348b
+    name: brigade
+    urls:
+    - brigade-0.19.2.tgz
+    version: 0.19.2
+  - apiVersion: v1
+    appVersion: v0.19.0
+    created: 2018-12-20T12:03:28.659536-07:00
+    description: Brigade provides event-driven scripting of Kubernetes pipelines.
+    digest: 3bbe59a1de86e06bde78a32ba97d2ddd9f88179105a5ac9f6c9d85adab9be527
     name: brigade
     urls:
     - brigade-0.19.1.tgz
     version: 0.19.1
   - apiVersion: v1
     appVersion: v0.19.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.131933291-06:00
+=======
+    created: 2018-12-20T12:03:28.658655-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 4fc9dfbf7426ec8f35b3295197452a135b0e4d7f22f3b82fc898550076750702
     name: brigade
@@ -30,7 +47,11 @@ entries:
     version: 0.19.0
   - apiVersion: v1
     appVersion: v0.18.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.131509011-06:00
+=======
+    created: 2018-12-20T12:03:28.657702-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 8adf138f0c9123da535794301cdd0cf7a26ba69673cc9cb3674e17e36a62aeb5
     name: brigade
@@ -39,7 +60,11 @@ entries:
     version: 0.18.0
   - apiVersion: v1
     appVersion: v0.17.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.131107715-06:00
+=======
+    created: 2018-12-20T12:03:28.65677-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: d1f0f0c673fb7ca9350e0ce7d2f33e4e2194fa73efdcf9012b1aac331263decc
     name: brigade
@@ -48,7 +73,11 @@ entries:
     version: 0.17.0
   - apiVersion: v1
     appVersion: v0.16.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.130690599-06:00
+=======
+    created: 2018-12-20T12:03:28.655701-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 67b1954fd956973e960e21612cd7e40dacf7a65dcef5e752e3f7be8840cefe50
     name: brigade
@@ -57,7 +86,11 @@ entries:
     version: 0.16.0
   - apiVersion: v1
     appVersion: v0.15.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.130294994-06:00
+=======
+    created: 2018-12-20T12:03:28.654736-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 892173390fe6be0e9054525c69acc15c49841c97bb715a08e21548645e6ce02e
     name: brigade
@@ -66,7 +99,11 @@ entries:
     version: 0.15.0
   - apiVersion: v1
     appVersion: v0.14.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.129890993-06:00
+=======
+    created: 2018-12-20T12:03:28.653814-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 1c15aa023a8e3d33efb0c6239318e1d956d714d5f23616d0a68a67993b411820
     name: brigade
@@ -75,7 +112,11 @@ entries:
     version: 0.14.0
   - apiVersion: v1
     appVersion: v0.13.1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.129501338-06:00
+=======
+    created: 2018-12-20T12:03:28.652834-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 11869f3ea5d093098f859bbdc171be960f73bf5054bdf6a8aa086c3d69495f75
     name: brigade
@@ -84,7 +125,11 @@ entries:
     version: 0.13.1
   - apiVersion: v1
     appVersion: v0.13.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.129102045-06:00
+=======
+    created: 2018-12-20T12:03:28.65192-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 86acb511ffd5083e4957479f608411e711eaa1d0ca3da8a50e67a523f2a7a871
     name: brigade
@@ -93,7 +138,11 @@ entries:
     version: 0.13.0
   - apiVersion: v1
     appVersion: v0.12.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.128739591-06:00
+=======
+    created: 2018-12-20T12:03:28.651247-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 90e1cdef4303e39fb105c3a0f745a2d802bb44deaffa29f9c25933fcd53ab262
     name: brigade
@@ -102,7 +151,11 @@ entries:
     version: 0.12.0
   - apiVersion: v1
     appVersion: v0.11.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.128322035-06:00
+=======
+    created: 2018-12-20T12:03:28.650196-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 40bc429edc50b66cd8ab51f419d0652b51d2aed5804fc2769b781b833168c582
     name: brigade
@@ -111,7 +164,11 @@ entries:
     version: 0.11.0
   - apiVersion: v1
     appVersion: v0.10.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.127855848-06:00
+=======
+    created: 2018-12-20T12:03:28.649161-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 16d6257160bb2d918a177fe8a6bc2fea97503360e79f3038052d29a7ffa1db0a
     name: brigade
@@ -120,7 +177,11 @@ entries:
     version: 0.10.0
   - apiVersion: v1
     appVersion: v0.9.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.136206026-06:00
+=======
+    created: 2018-12-20T12:03:28.66745-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: c412e81afb4d412ce13390552d8d13bc8844138801e75a3b135fb368513e4fc0
     name: brigade
@@ -129,7 +190,11 @@ entries:
     version: 0.9.0
   - apiVersion: v1
     appVersion: v0.8.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.135827162-06:00
+=======
+    created: 2018-12-20T12:03:28.666643-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 60a1094cea6fb6d6446e831e6709a87a8cd1e5ae61aff79508244fda07b526fd
     name: brigade
@@ -138,7 +203,11 @@ entries:
     version: 0.8.0
   - apiVersion: v1
     appVersion: v0.7.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.135470418-06:00
+=======
+    created: 2018-12-20T12:03:28.665836-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 9eba7bb5f2ec83ebf6b56a58773ecf7d5d9f0bb04b54c8775b06f031d452c956
     name: brigade
@@ -147,7 +216,11 @@ entries:
     version: 0.7.0
   - apiVersion: v1
     appVersion: v0.6.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.135139703-06:00
+=======
+    created: 2018-12-20T12:03:28.664912-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 1c8ab3ee88a99c6e5cd5fc91bf645d1a267634b7bc73fe03e0f4b9775c1aae0c
     name: brigade
@@ -156,7 +229,11 @@ entries:
     version: 0.6.0
   - apiVersion: v1
     appVersion: v0.5.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.134847189-06:00
+=======
+    created: 2018-12-20T12:03:28.66413-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 515903c641fd1bc720db8d32c1e37d9550b5144b426c61805a953eada012ac53
     name: brigade
@@ -165,7 +242,11 @@ entries:
     version: 0.5.0
   - apiVersion: v1
     appVersion: v0.4.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.134408664-06:00
+=======
+    created: 2018-12-20T12:03:28.662894-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 13a89ce5c3d78558ed9d318bed188f117fe0383570ab68d6d9cdd2b1ee76434b
     name: brigade
@@ -174,7 +255,11 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: v0.3.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.133906029-06:00
+=======
+    created: 2018-12-20T12:03:28.662229-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 75369780f6354af84cef79e1c2baa386f2862c149ac779edb0cbcc5b65c690ed
     name: brigade
@@ -182,7 +267,11 @@ entries:
     - brigade-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.133353291-06:00
+=======
+    created: 2018-12-20T12:03:28.66159-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 2e8d80d6a029b52e6412cf6931fc0622f98aca6f62666ab759158c415a6d0eb8
     name: brigade
@@ -190,7 +279,11 @@ entries:
     - brigade-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.133096263-06:00
+=======
+    created: 2018-12-20T12:03:28.660974-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: A Helm chart for Kubernetes
     digest: 840b801a258a070bbcb6ff0ea7194202f6db2b40a9a10ff28fef5de9c1813b20
     name: brigade
@@ -199,18 +292,26 @@ entries:
     version: 0.2.0
   brigade-github-app:
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.136416047-06:00
+=======
+    created: 2018-12-20T12:03:28.667718-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: The Brigade GitHub App, an advanced gateway for GitHub
-    digest: 6728cd1b1a472f748339ff9e70a484732d0ea2330c8e4e0ca7c0725f13cb0138
+    digest: 3ee23b6647f5a83b03cd6e0086155aa4151c4a95da5153047bbbfc4a21eaec32
     name: brigade-github-app
     urls:
     - brigade-github-app-0.1.1.tgz
     version: 0.1.1
   brigade-k8s-gateway:
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.13660068-06:00
+=======
+    created: 2018-12-20T12:03:28.667954-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: A Helm chart for Kubernetes
-    digest: abdc75480e1ac1ee36cd0f5da8d90499a26abb9defc66a94a7a0d39d6fdc61c3
+    digest: 387d6569083775e8b633a426a514d048985cdc82e48a0b592e6de6f7d409eec0
     name: brigade-k8s-gateway
     urls:
     - brigade-k8s-gateway-0.1.0.tgz
@@ -218,16 +319,24 @@ entries:
   brigade-project:
   - apiVersion: v1
     appVersion: v0.19.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.139316421-06:00
+=======
+    created: 2018-12-20T12:03:28.673981-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
-    digest: 7ddd8166b2245f3c71c7cba5efc74e6e85d6e2293472cfa48ee00c3df3e0cda8
+    digest: 5d76dd3f4d36ad689c30b8611a238feb8e82873cac6735b5d0e762b1f7b7cb22
     name: brigade-project
     urls:
     - brigade-project-0.19.1.tgz
     version: 0.19.1
   - apiVersion: v1
     appVersion: v0.19.0
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.139013517-06:00
+=======
+    created: 2018-12-20T12:03:28.673597-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 85edaa7dbe42d412e2a5d2094934b99004faa5cacaf19c19a423ae03366c8e52
     name: brigade-project
@@ -235,7 +344,11 @@ entries:
     - brigade-project-0.19.0.tgz
     version: 0.19.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.1387678-06:00
+=======
+    created: 2018-12-20T12:03:28.672876-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: e98cb2fcb51da05a431e04387a7669d3b2ee7591338644582751049918719a58
     name: brigade-project
@@ -243,7 +356,11 @@ entries:
     - brigade-project-0.18.0.tgz
     version: 0.18.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.138544535-06:00
+=======
+    created: 2018-12-20T12:03:28.672383-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 1bcbcae430561cd7be8981621261bb6c25d045038ca41d0df708fdb5704233a6
     name: brigade-project
@@ -251,7 +368,11 @@ entries:
     - brigade-project-0.17.0.tgz
     version: 0.17.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.138313946-06:00
+=======
+    created: 2018-12-20T12:03:28.671891-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 72737ce6ce8ac8f8c61694462cb2f9ba352a4bc580bed2ed453528e96a4f5a68
     name: brigade-project
@@ -259,7 +380,11 @@ entries:
     - brigade-project-0.16.0.tgz
     version: 0.16.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.138090521-06:00
+=======
+    created: 2018-12-20T12:03:28.671399-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 22ea07b9e93a148624483bb83dc877b956a190542444db4ad0ee95bcf70d5d70
     name: brigade-project
@@ -267,7 +392,11 @@ entries:
     - brigade-project-0.15.0.tgz
     version: 0.15.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.137865282-06:00
+=======
+    created: 2018-12-20T12:03:28.670909-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 047435955397ff1ae4a9987fa789ebc6ed6a1089bcc11301d27f15a5e3b52c31
     name: brigade-project
@@ -275,7 +404,11 @@ entries:
     - brigade-project-0.14.0.tgz
     version: 0.14.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.137635615-06:00
+=======
+    created: 2018-12-20T12:03:28.67042-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 3071801fa41efd910b682df60795db973127553f1d27802acc538a80a7db870a
     name: brigade-project
@@ -283,7 +416,11 @@ entries:
     - brigade-project-0.13.1.tgz
     version: 0.13.1
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.137420405-06:00
+=======
+    created: 2018-12-20T12:03:28.669939-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 19cf93b6a139f38d64f76d86e30866b8229c9687f77757355416c620288adf58
     name: brigade-project
@@ -291,7 +428,11 @@ entries:
     - brigade-project-0.13.0.tgz
     version: 0.13.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.137247243-06:00
+=======
+    created: 2018-12-20T12:03:28.669502-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 14f9ccbb3addb739efe873c7709571763a6d1b803e6c9b0377e59c928475e16d
     name: brigade-project
@@ -299,7 +440,11 @@ entries:
     - brigade-project-0.12.0.tgz
     version: 0.12.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.137019329-06:00
+=======
+    created: 2018-12-20T12:03:28.668992-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 9cefccdca47ce309cd0813aed9bd17cda27a3bbfa56b1634566e1a575e2c9e66
     name: brigade-project
@@ -307,7 +452,11 @@ entries:
     - brigade-project-0.11.0.tgz
     version: 0.11.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.136806022-06:00
+=======
+    created: 2018-12-20T12:03:28.668557-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 054a76ffb2fa1cb5aec3b55693905d60454bbd3971c7e7786734ae6190fa7db0
     name: brigade-project
@@ -315,7 +464,11 @@ entries:
     - brigade-project-0.10.0.tgz
     version: 0.10.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.140779121-06:00
+=======
+    created: 2018-12-20T12:03:28.677636-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 0dfad2f8d2291acfcdace0ad8daa3738a9e4e13f12cab20b29e26ee28fc09b44
     name: brigade-project
@@ -323,7 +476,11 @@ entries:
     - brigade-project-0.9.0.tgz
     version: 0.9.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.140598505-06:00
+=======
+    created: 2018-12-20T12:03:28.677221-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 6c2be2b1d3214c1b06cb18499b413647ac60701b6c12c868e8e857de28eb968b
     name: brigade-project
@@ -331,7 +488,11 @@ entries:
     - brigade-project-0.8.0.tgz
     version: 0.8.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.140420674-06:00
+=======
+    created: 2018-12-20T12:03:28.676762-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: 042b85f0701d3a0083bc08527b67bf4828874a0726cfc5afc07e169eb1865258
     name: brigade-project
@@ -339,7 +500,11 @@ entries:
     - brigade-project-0.7.0.tgz
     version: 0.7.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.14023541-06:00
+=======
+    created: 2018-12-20T12:03:28.676297-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: c3e3b65091ece3aec5f52df2a6625b95de8eaf4d47d327706671ec9d7afa015a
     name: brigade-project
@@ -347,7 +512,11 @@ entries:
     - brigade-project-0.6.0.tgz
     version: 0.6.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.140044164-06:00
+=======
+    created: 2018-12-20T12:03:28.675809-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: bb59a0fee70f037973623f38c6bc40dccee0634f2672096f172b294583ce33d7
     name: brigade-project
@@ -355,7 +524,11 @@ entries:
     - brigade-project-0.5.0.tgz
     version: 0.5.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.13986466-06:00
+=======
+    created: 2018-12-20T12:03:28.675357-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: bb5c51cb903c3b70602505fb7234afd18bb521398b1f0f1cd0b0b2811843522c
     name: brigade-project
@@ -363,7 +536,11 @@ entries:
     - brigade-project-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.139689755-06:00
+=======
+    created: 2018-12-20T12:03:28.674905-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create a Brigade project
     digest: ccd6d193fb012cd41d74ce1255dbce296acbc0f12af3099e5ac0d31985e26118
     name: brigade-project
@@ -371,7 +548,11 @@ entries:
     - brigade-project-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.139506574-06:00
+=======
+    created: 2018-12-20T12:03:28.674436-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: Create an Brigade project
     digest: 637d46ff4f147f8490806a49251a851aa8db3c2c181056f91191dd06d94d4f78
     name: brigade-project
@@ -380,11 +561,27 @@ entries:
     version: 0.2.0
   kashti:
   - apiVersion: v1
+<<<<<<< HEAD
     created: 2018-12-20T17:47:16.141019328-06:00
+=======
+    created: 2018-12-20T12:03:28.678187-07:00
+    description: A Helm chart for Kubernetes
+    digest: 8c2ac951a3658f2ccd95087754c01f93e88d004239ed3fea159ba9b1c3fbc6b9
+    name: kashti
+    urls:
+    - kashti-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    created: 2018-12-20T12:03:28.677905-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default
     description: A Helm chart for Kubernetes
     digest: de2bc8a3f0f7b686c4201dc6794e7dd5cc3874676a01e7df6ee7f92a8b196bb4
     name: kashti
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
+<<<<<<< HEAD
 generated: 2018-12-20T17:47:16.12724383-06:00
+=======
+generated: 2018-12-20T12:03:28.64781-07:00
+>>>>>>> feat(brigade): add kashti chart as dep; install by default

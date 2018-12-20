@@ -27,6 +27,18 @@
 # ones supplied by the chart.  Provided that the service accounts remain the
 # same, this chart should provide compatibility with custom rules.
 
+# Kashti, the Brigade Dashboard, is enabled by default.
+#
+# These resources are included by way of a sub-chart dependency (see requirements.yaml)
+#
+# Further configurability of Kashti-specific values would also go here, e.g.
+# kashti:
+#   image:
+#     repository: myrepository
+#
+# For full configuration, see the kashti chart in this repository and its values.yaml.
+kashti:
+  enabled: true
 
 # IMPORTANT: The RBAC system is complex, and if you are using RBACs in your
 # cluster, you may need to evaluate existing rules and accounts in addition
