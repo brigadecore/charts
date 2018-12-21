@@ -1,6 +1,5 @@
 dependencies:
   - name: kashti
-    # TODO: bump to 0.1.1 after chart bump is merged
-    version: 0.1.0
+    version: 0.1.1
     repository: https://azure.github.io/brigade-charts
     condition: kashti.enabled
