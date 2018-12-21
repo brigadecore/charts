@@ -113,6 +113,25 @@ gw:
   serviceAccount:
     create: true
     name: 
+  # The service is for the Brigade gateway. If you do not want to have Brigade
+  # listening for incomming GitHub requests, disable this.
+  service:
+    name: brigade-service
+    type: LoadBalancer
+    externalPort: 7744
+    internalPort: 7744
+  # By default, this is off. If you enable it, you might want to change the
+  # service.type to ClusterIP
+  ingress:
+    enabled: false
+    hosts: []
+    paths:
+    - /
+    # Add TLS configuration
+    # tls: <TLS_CONFIG>
+    # Add custom annotations
+    # annotations:
+    #   name: value
 
   # DEPRECATED: As of Brigade v0.10.0, this is a no-op. Use allowedAuthorRoles
   # isntead.
@@ -171,26 +190,6 @@ vacuum:
   serviceAccount:
     create: true
     name: 
-
-# The service is for the Brigade gateway. If you do not want to have Brigade
-# listening for incomming GitHub requests, disable this.
-service:
-  name: brigade-service
-  type: LoadBalancer
-  externalPort: 7744
-  internalPort: 7744
-# By default, this is off. If you enable it, you might want to change the
-# service.type to ClusterIP
-ingress:
-  enabled: false
-  hosts: []
-  paths:
-  - /
-  # Add TLS configuration
-  # tls: <TLS_CONFIG>
-  # Add custom annotations
-  # annotations:
-  #   name: value
 
 
 # DEVELOPMENT ONLY: Use this for off-ACS development

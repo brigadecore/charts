@@ -1,7 +1,7 @@
-{{- if .Values.ingress.enabled -}}
+{{- if .Values.gw.ingress.enabled -}}
 {{- $serviceName := include "brigade.gw.fullname" . -}}
 {{- $servicePort := .Values.service.externalPort -}}
-{{- $paths := .Values.ingress.paths -}}
+{{- $paths := .Values.gw.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -12,12 +12,12 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   annotations:
-    {{- range $key, $value := .Values.ingress.annotations }}
+    {{- range $key, $value := .Values.gw.ingress.annotations }}
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
   rules:
-    {{- range $host := .Values.ingress.hosts }}
+    {{- range $host := .Values.gw.ingress.hosts }}
     - host: {{ $host }}
       http:
         paths:
@@ -39,8 +39,8 @@ spec:
               servicePort: {{ $servicePort }}
           {{- end -}}
     {{- end -}}
-  {{- if .Values.ingress.tls }}
+  {{- if .Values.gw.ingress.tls }}
   tls:
-{{ toYaml .Values.ingress.tls | indent 4 }}
+{{ toYaml .Values.gw.ingress.tls | indent 4 }}
   {{- end -}}
 {{- end -}}

@@ -28,22 +28,22 @@ spec:
         image: "{{ .Values.gw.registry }}/{{ .Values.gw.name }}:{{ default .Chart.AppVersion .Values.gw.tag }}"
         imagePullPolicy: {{ default "IfNotPresent" .Values.gw.pullPolicy }}
         ports:
-        - containerPort: {{ .Values.service.internalPort }}
+        - containerPort: {{ .Values.gw.service.internalPort }}
         livenessProbe:
           httpGet:
             path: /healthz
-            port: {{ .Values.service.internalPort }}
+            port: {{ .Values.gw.service.internalPort }}
         readinessProbe:
           httpGet:
             path: /healthz
-            port: {{ .Values.service.internalPort }}
+            port: {{ .Values.gw.service.internalPort }}
         env:
           - name: BRIGADE_NAMESPACE
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
           - name: BRIGADE_GATEWAY_PORT
-            value: {{ .Values.service.internalPort | quote }}
+            value: {{ .Values.gw.service.internalPort | quote }}
           - name: BRIGADE_AUTHORS
             value: {{ if .Values.gw.allowedAuthorRoles }}{{ join "," .Values.gw.allowedAuthorRoles | quote }}{{ end }}
       {{ if .Values.privateRegistry }}imagePullSecrets:

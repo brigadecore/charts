@@ -24,8 +24,6 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.controller.registry }}/{{ .Values.controller.name }}:{{ default .Chart.AppVersion .Values.controller.tag }}"
         imagePullPolicy: {{ default "IfNotPresent" .Values.controller.pullPolicy }}
-        ports:
-        - containerPort: {{ .Values.service.internalPort }}
         command:
         - /usr/bin/brigade-controller
         {{ if .Values.controller.workerResources }}
