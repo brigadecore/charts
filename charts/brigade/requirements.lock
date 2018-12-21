@@ -1,6 +1,6 @@
 dependencies:
 - name: kashti
   repository: https://azure.github.io/brigade-charts
-  version: 0.1.0
-digest: sha256:c7ffa88453cc1356b8c1a74273a6676e24b55e0077358c24d79a644f0e587378
-generated: 2018-12-20T11:35:53.097742-07:00
+  version: 0.1.1
+digest: sha256:5edccee360d79994119603e5cba9e0a2a113637e8b36a8cc9eb1ad34014d4a45
+generated: 2018-12-21T11:14:23.085627-07:00
