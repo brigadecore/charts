@@ -32,8 +32,9 @@ endef
 build:
 ifndef CHART
 	$(call all-charts,build)
-else 
-	helm package -d $(SERVE_DIR) $(CHARTS_DIR)/$(CHART)
+else
+	@helm dep up $(CHARTS_DIR)/$(CHART)
+	@helm package -d $(SERVE_DIR) $(CHARTS_DIR)/$(CHART)
 endif
 
 .PHONY: test
@@ -41,9 +42,9 @@ test:
 ifndef CHART
 	$(call all-charts,test)
 else 
-	helm lint $(CHARTS_DIR)/$(CHART)
+	@helm lint $(CHARTS_DIR)/$(CHART)
 endif
 
 .PHONY: index
 index:
-	helm repo index $(SERVE_DIR)
+	@helm repo index $(SERVE_DIR)

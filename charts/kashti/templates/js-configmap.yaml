@@ -1,4 +1,4 @@
-
+{{ $apiServer := include "brigade.apiServer" . }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -9,5 +9,5 @@ metadata:
     heritage: {{ .Release.Service }}
 data:
   "settings.js": |-
-    var brigadeApiURL = '//' + location.host; '{{ default "http://localhost:7745" .Values.brigade.apiServer }}';
+    var brigadeApiURL = '//' + location.host; '{{ default $apiServer .Values.brigade.apiServer }}';
     // End

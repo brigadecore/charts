@@ -1,3 +1,4 @@
+{{ $apiServer := include "brigade.apiServer" . }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -14,7 +15,7 @@ data:
 
           # Proxy to API server
           location /v1/ {
-              proxy_pass {{ .Values.brigade.apiServer }}/v1/;
+              proxy_pass {{ default $apiServer .Values.brigade.apiServer }}/v1/;
           }
 
           location / {

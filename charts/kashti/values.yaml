@@ -1,5 +1,8 @@
 brigade:
-  apiServer: "http://localhost:7745"
+  # This value defaults to one derived from the context of a release,
+  # and assumes this chart has been deployed in tandem with the brigade chart.
+  # If this is not the case, one can supply a non-default value here.
+  apiServer:
 
 replicaCount: 1
 image:
