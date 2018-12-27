@@ -2,6 +2,10 @@
 rbac:
   enabled: false
 
+serviceAccount:
+  create: true
+  name: 
+
 # Image configuration
 registry: deis
 name: brigade-github-app

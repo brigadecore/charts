@@ -1,13 +1,16 @@
 --- {{ $fname := include "gateway.fullname" . }}
+{{ $serviceAccount := default $fname .Values.serviceAccount.name }}
+{{ if .Values.serviceAccount.create }}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: {{ $fname }}
+  name: {{ $serviceAccount }}
   labels:
     app: {{ template "gateway.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
+{{ end }}
 {{ if .Values.rbac.enabled }}
 ---
 kind: Role
