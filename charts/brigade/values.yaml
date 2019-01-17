@@ -183,6 +183,23 @@ cr:
     create: true
     name: 
 
+# These values are for the Generic Gateway.
+# Enabling this will start a service that handles webhooks from external clients. 
+# To call this endpoint you need a special secret value that is configured once per project.
+genericGateway:
+  enabled: false
+  registry: deis
+  name: brigade-generic-gateway
+  #tag: latest
+  service:
+    name: brigade-generic-service
+    type: ClusterIP  # Change to LoadBalancer if you want this externally available.
+    externalPort: 8081
+    internalPort: 8000
+  serviceAccount:
+    create: true
+    name: 
+
 # The vacuum periodically cleans up old builds.
 # Brigade does not delete builds on completion. Instead, it leaves builds around
 # for a period of time, providing you with an opportunity to inspect builds for

@@ -1,0 +1,23 @@
+{{ if .Values.genericGateway.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "brigade.genericGateway.fullname" . }}
+  labels:
+    helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    app.kubernetes.io/instance: "{{ .Release.Name }}"
+    app.kubernetes.io/managed-by: "{{ .Release.Service }}"
+    role: gateway
+    type: generic
+spec:
+  type: {{ .Values.genericGateway.service.type }}
+  ports:
+  - port: {{ .Values.genericGateway.service.externalPort }}
+    targetPort: {{ .Values.genericGateway.service.internalPort }}
+    protocol: TCP
+    name: {{ .Values.genericGateway.service.name }}
+  selector:
+    app.kubernetes.io/name: {{ template "brigade.fullname" . }}
+    role: gateway
+    type: generic
+{{ end }}
