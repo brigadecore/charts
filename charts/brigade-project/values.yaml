@@ -27,6 +27,10 @@ cloneURL: "https://github.com/deis/empty-testbed.git"
 # Used by GitHub and other services to compute hook HMACs.
 sharedSecret: "IBrakeForSeaBeasts"
 
+# OPTIONAL: genericGatewaySecret is the secret that should be used on subsequent calls to the Generic Gateway in order to raise a "webhook" event for this Project
+# This is REQUIRED for the Generic Gateway, but optional otherwise.
+genericGatewaySecret: "mygenericsecret"
+
 # OPTIONAL: Use this to have Brigade update your project about the build.
 # This is REQUIRED for the GitHub gateway, but optional otherwise.
 github:
