@@ -30,6 +30,9 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- define "brigade.cr.fullname" -}}
 {{ include "brigade.fullname" . | printf "%s-cr-gw" }}
 {{- end -}}
+{{- define "brigade.genericGateway.fullname" -}}
+{{ include "brigade.fullname" . | printf "%s-generic-gateway" }}
+{{- end -}}
 {{- define "brigade.vacuum.fullname" -}}
 {{ include "brigade.fullname" . | printf "%s-vacuum" }}
 {{- end -}}
