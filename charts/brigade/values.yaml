@@ -7,9 +7,9 @@
 # By default, the chart will install with RBAC. To install without
 # RBAC, set `rbac.enabled` to `false`.
 #
-# To disable the GitHub gateway, set `gw.enabled` to `false`. This will mean
-# that no GitHub hooks will work, though scripts will still be able to mount
-# GitHub projects based on the Project configuration.
+# To enable the GitHub gateway, set `brigade-github-app.enabled` to `true`.
+# See Azure/brigade-gitub-app for steps to setup a Github App and add its configuration
+# to the sub-chart section below.
 #
 # Advanced Configuration
 #
@@ -39,6 +39,19 @@
 # For full configuration, see the kashti chart in this repository and its values.yaml.
 kashti:
   enabled: true
+
+# Brigade Github App, the GitHub Gateway for Brigade, is disabled by default.
+#
+# These resources are included by way of a sub-chart dependency (see requirements.yaml)
+#
+# Further configurability of Kashti-specific values would also go here, e.g.
+# brigade-github-app:
+#   github:
+#     appID: myGithubAppID
+#
+# For full configuration, see the brigade-github-app chart in this repository
+brigade-github-app:
+  enabled: false
 
 # IMPORTANT: The RBAC system is complex, and if you are using RBACs in your
 # cluster, you may need to evaluate existing rules and accounts in addition
@@ -106,54 +119,6 @@ worker:
     name: brigade-worker
   #tag:
   #pullPolicy: IfNotPresent
-
-# gw is the GitHub gateway.
-gw:
-  enabled: true
-  registry: deis
-  name: brigade-github-gateway
-  #tag:
-  #pullPolicy: IfNotPresent
-  # The author associations who are allowed to have PRs built
-  # Classes are: COLLABORATOR, CONTRIBUTOR, OWNER, NONE, MEMBER, FIRST_TIMER, FIRST_TME_CONTRIBUTOR
-  # See https://developer.github.com/v4/enum/commentauthorassociation/
-  # To completely disable pull request builds, leave this list blank.
-  allowedAuthorRoles:
-    - OWNER
-    - MEMBER
-    - COLLABORATOR
-  serviceAccount:
-    create: true
-    name: 
-  # The service is for the Brigade gateway. If you do not want to have Brigade
-  # listening for incomming GitHub requests, disable this.
-  service:
-    name: brigade-service
-    type: LoadBalancer
-    externalPort: 7744
-    internalPort: 7744
-  # By default, this is off. If you enable it, you might want to change the
-  # service.type to ClusterIP
-  # Configure liveness probes except `httpGet`
-  #livenessProbe:
-  #  initialDelaySeconds: 20
-  # Configure readiness probes except `httpGet`
-  #readinessProbe:
-  #  initialDelaySeconds: 20
-  ingress:
-    enabled: false
-    hosts: []
-    paths:
-    - /
-    # Add TLS configuration
-    # tls: <TLS_CONFIG>
-    # Add custom annotations
-    # annotations:
-    #   name: value
-
-  # DEPRECATED: As of Brigade v0.10.0, this is a no-op. Use allowedAuthorRoles
-  # isntead.
-  #buildForkedPullRequests: true
 
 
 # These values are for the Container Registry (CR) gateway.
