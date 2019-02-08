@@ -1,5 +1,7 @@
-# Brigade Kubernetes Event Gateway
+# Brigade GitHub App Gateway
 
-This gateway listens to Kubernetes events and emits them as Brigade events.
+This gateway listens to GitHub events originating from a configured GitHub App and emits them as Brigade events.
 
-Use this gateway to trigger Brigade scripts as a response to cluster events.
+Use this gateway to trigger Brigade scripts as a response to GitHub App webhooks (Checks API, etc.)
+
+See more at https://github.com/Azure/brigade-github-app

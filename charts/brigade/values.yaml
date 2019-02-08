@@ -27,6 +27,10 @@
 # ones supplied by the chart.  Provided that the service accounts remain the
 # same, this chart should provide compatibility with custom rules.
 
+#########################
+# Sub-chart configuration
+#########################
+
 # Kashti, the Brigade Dashboard, is enabled by default.
 #
 # These resources are included by way of a sub-chart dependency (see requirements.yaml)
@@ -35,6 +39,7 @@
 # kashti:
 #   image:
 #     repository: myrepository
+#     ...
 #
 # For full configuration, see the kashti chart in this repository and its values.yaml.
 kashti:
@@ -44,14 +49,30 @@ kashti:
 #
 # These resources are included by way of a sub-chart dependency (see requirements.yaml)
 #
-# Further configurability of Kashti-specific values would also go here, e.g.
+# Further configurability of Brigade Github App-specific values would also go here, e.g.
 # brigade-github-app:
 #   github:
 #     appID: myGithubAppID
+#     ...
 #
 # For full configuration, see the brigade-github-app chart in this repository
 brigade-github-app:
   enabled: false
+
+# gw is the deprecated Oauth-based GitHub Gateway that shipped with Brigade <= v0.20
+#
+# Its alias has been preserved as `gw` to support legacy Brigade installations,
+# although the chart name is `brigade-github-oauth`.
+#
+# We recommend users switch to the fully-supported Brigade GitHub App (configured above) instead.
+#
+# For full configuration, see the brigade-github-oauth chart in this repository
+gw:
+  enabled: false
+
+#############################
+# Brigade chart configuration
+#############################
 
 # IMPORTANT: The RBAC system is complex, and if you are using RBACs in your
 # cluster, you may need to evaluate existing rules and accounts in addition
