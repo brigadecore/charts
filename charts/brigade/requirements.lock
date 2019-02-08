@@ -5,5 +5,8 @@ dependencies:
 - name: brigade-github-app
   repository: https://azure.github.io/brigade-charts
   version: 0.1.2
-digest: sha256:0a14b39bcccf75b11fbc6b9f279b0d6702b4fd8e2cd149efe8e0105518e50658
-generated: 2019-02-07T19:56:40.235316-07:00
+- name: brigade-github-oauth
+  repository: https://azure.github.io/brigade-charts
+  version: 0.1.0
+digest: sha256:6c78af0c7e364eb5670d1a718cf980e7eaaf91b4797cf1461379730413727733
+generated: 2019-02-08T16:27:44.750379-07:00
