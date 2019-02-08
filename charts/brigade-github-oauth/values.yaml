@@ -1,0 +1,49 @@
+registry: deis
+name: brigade-github-gateway
+# Note: tag is currently pinned to v0.20.0, the last release of this gateway, via appVersion in this chart's Chart.yaml
+# Be sure the tag exists when changing this value
+#tag:
+#pullPolicy: IfNotPresent
+
+rbac:
+  enabled: true
+
+# The author associations who are allowed to have PRs built
+# Classes are: COLLABORATOR, CONTRIBUTOR, OWNER, NONE, MEMBER, FIRST_TIMER, FIRST_TME_CONTRIBUTOR
+# See https://developer.github.com/v4/enum/commentauthorassociation/
+# To completely disable pull request builds, leave this list blank.
+allowedAuthorRoles:
+  - OWNER
+  - MEMBER
+  - COLLABORATOR
+
+serviceAccount:
+  create: true
+  name:
+
+# The service is for the Brigade gateway. If you do not want to have Brigade
+# listening for incomming GitHub requests, disable this.
+service:
+  name: github-oauth-gateway
+  type: LoadBalancer
+  externalPort: 7744
+  internalPort: 7744
+# By default, this is off. If you enable it, you might want to change the
+# service.type to ClusterIP
+# Configure liveness probes except `httpGet`
+#livenessProbe:
+#  initialDelaySeconds: 20
+# Configure readiness probes except `httpGet`
+#readinessProbe:
+#  initialDelaySeconds: 20
+
+ingress:
+  enabled: false
+  hosts: []
+  paths:
+  - /
+  # Add TLS configuration
+  # tls: <TLS_CONFIG>
+  # Add custom annotations
+  # annotations:
+  #   name: value

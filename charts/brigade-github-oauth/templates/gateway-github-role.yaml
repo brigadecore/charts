@@ -1,0 +1,51 @@
+{{ $fullname := include "gateway.fullname" . }}
+{{ $serviceAccount := default $fullname .Values.serviceAccount.name }}
+{{ if .Values.serviceAccount.create }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ $serviceAccount }}
+  labels:
+    app.kubernetes.io/name: {{ include "gateway.legacyappname" . }}
+    helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    app.kubernetes.io/instance: "{{ .Release.Name }}"
+    app.kubernetes.io/managed-by: "{{ .Release.Service }}"
+{{ end }}
+{{ if .Values.rbac.enabled }}
+---
+kind: Role
+apiVersion: {{ template "gateway.rbac.version" }}
+metadata:
+  name: {{ $fullname }}
+  labels:
+    app.kubernetes.io/name: {{ include "gateway.legacyappname" . }}
+    helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    app.kubernetes.io/instance: "{{ .Release.Name }}"
+    app.kubernetes.io/managed-by: "{{ .Release.Service }}"
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["list", "watch"]
+---
+kind: RoleBinding
+apiVersion: {{ template "gateway.rbac.version" }}
+metadata:
+  name: {{ $fullname }}
+  labels:
+    app.kubernetes.io/name: {{ include "gateway.legacyappname" . }}
+    helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    app.kubernetes.io/instance: "{{ .Release.Name }}"
+    app.kubernetes.io/managed-by: "{{ .Release.Service }}"
+subjects:
+- kind: ServiceAccount
+  name: {{ $serviceAccount }}
+roleRef:
+  kind: Role
+  name: {{ $fullname }}
+  apiGroup: rbac.authorization.k8s.io
+{{ end }}{{/* end if rbac enabled */}}
+
