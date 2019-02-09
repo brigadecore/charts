@@ -29,7 +29,7 @@ endef
 
 .PRECIOUS: build
 .PHONY: build
-build:
+build: clean
 ifndef CHART
 	$(call all-charts,build)
 else
@@ -48,3 +48,12 @@ endif
 .PHONY: index
 index:
 	@helm repo index $(SERVE_DIR)
+
+# remove untracked sub-chart artifacts before rebuilding
+.PHONY: clean
+clean:
+ifndef CHART
+	$(call all-charts,clean)
+else
+	@rm -rf $(CHARTS_DIR)/$(CHART)/charts
+endif
