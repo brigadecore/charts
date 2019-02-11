@@ -1,6 +1,7 @@
-const { events, Job, Group } = require("brigadier")
+const { events, Job, Group } = require("brigadier");
 
-const projectName = "brigade-charts"
+const projectName = "brigade-charts";
+const sharedMountPrefix = `/mnt/brigade/share`;
 
 class HelmJob {
   constructor (name) {
@@ -34,8 +35,50 @@ function test(e, project) {
   return tester;
 }
 
+function build(e, project) {
+  var builder = new HelmJob(`${projectName}-build`);
+  builder.job.storage.enabled = true;
+
+  builder.tasks.push(
+    "helm init -c",
+    "make build",
+    "make index",
+    `cp -a dist/ ${sharedMountPrefix}`,
+  );
+
+  return builder;
+}
+
+function publish(e, project) {
+  var publisher = new Job(`${projectName}-publish`, "node");
+  publisher.storage.enabled = true;
+
+  publisher.tasks = [
+    "npm install -g gh-pages",
+    "cd /src",
+    `cp -a ${sharedMountPrefix}/dist .`,
+    `gh-pages -d dist \
+      -r https://brigadeci:${project.secrets.ghToken}@github.com/${project.repo.name}.git \
+      -u "Brigade CI <brigade@ci>" \
+      -m "Update chart artifacts and index.yaml"`
+  ];
+
+  return publisher;
+}
+
 function runSuite(e, p) {
   runTests(e, p).catch(e => {console.error(e.toString())});
+
+  // if master branch, publish charts
+  if (e.revision.ref.includes("refs/heads/master")) {
+    build(e, p).run()
+      .then(() => {
+        publish(e, p).run();
+      })
+      .catch((err) => {
+        console.log(err.toString());
+      });
+  }
 }
 
 function runTests(e, p) {
@@ -120,10 +163,8 @@ async function notificationWrap(job, note, conclusion) {
   }
 }
 
-// TODO: add publish/release job(s)/handler(s)
-
 events.on("exec", (e, p) => {
-  test(e, p).run()
+  test(e, p).run();
 })
 
 events.on("check_suite:requested", runSuite)

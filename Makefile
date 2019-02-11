@@ -1,5 +1,5 @@
 CHARTS_DIR := ./charts
-SERVE_DIR  := ./docs
+SERVE_DIR  := ./dist
 
 # --no-print-directory avoids verbose cd logging when invoking targets that utilize sub-makes
 MAKE_OPTS  ?= --no-print-directory
