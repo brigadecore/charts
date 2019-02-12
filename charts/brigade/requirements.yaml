@@ -3,3 +3,12 @@ dependencies:
     version: 0.1.1
     repository: https://azure.github.io/brigade-charts
     condition: kashti.enabled
+  - name: brigade-github-app
+    version: 0.1.2
+    repository: https://azure.github.io/brigade-charts
+    condition: brigade-github-app.enabled
+  - name: brigade-github-oauth
+    alias: gw
+    version: 0.1.0
+    repository: https://azure.github.io/brigade-charts
+    condition: gw.enabled
