@@ -41,6 +41,8 @@ function build(e, project) {
 
   builder.tasks.push(
     "helm init -c",
+    // Needed for fetching brigade's sub-charts (kashti, etc.)
+    "helm repo add brigade https://azure.github.io/brigade-charts",
     "make build",
     "make index",
     `cp -a dist/ ${sharedMountPrefix}`,
@@ -57,10 +59,10 @@ function publish(e, project) {
     "npm install -g gh-pages",
     "cd /src",
     `cp -a ${sharedMountPrefix}/dist .`,
-    `gh-pages -d dist \
+    `gh-pages --add -d dist \
       -r https://brigadeci:${project.secrets.ghToken}@github.com/${project.repo.name}.git \
       -u "Brigade CI <brigade@ci>" \
-      -m "Update chart artifacts and index.yaml"`
+      -m "Add chart artifacts and update index.yaml"`
   ];
 
   return publisher;
@@ -70,7 +72,7 @@ function runSuite(e, p) {
   runTests(e, p).catch(e => {console.error(e.toString())});
 
   // if master branch, publish charts
-  if (e.revision.ref.includes("refs/heads/master")) {
+  if (e.revision.ref.includes("master")) {
     build(e, p).run()
       .then(() => {
         publish(e, p).run();
