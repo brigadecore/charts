@@ -30,6 +30,7 @@ endef
 .PRECIOUS: build
 .PHONY: build
 build: clean
+	@mkdir -p $(SERVE_DIR)
 ifndef CHART
 	$(call all-charts,build)
 else
