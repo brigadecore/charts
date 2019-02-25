@@ -184,7 +184,31 @@ genericGateway:
     internalPort: 8000
   serviceAccount:
     create: true
-    name: 
+    name:
+  ingress:
+    enabled: false
+
+    # use the correct annotation for your certificate provider
+    # the following config works according to the Brigade docs
+    # which show how to use Nginx Ingress Controller and cert-manager
+    #
+    # Note: if you delete the ingress resource and re-create it on the same subdomain, make sure
+    # to delete the secret before trying again.
+
+    # annotations:
+    #   kubernetes.io/ingress.class: "nginx"    
+    #   certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
+    #   certmanager.k8s.io/acme-challenge-type: http01
+
+    # hosts:
+    #   - brigade-events.subdomain.domain.com
+    # paths:
+    # - /
+    # tls:
+    #   - secretName: brigade-events
+    #     hosts:
+    #     - brigade-events.subdomain.domain.com
+
 
 # The vacuum periodically cleans up old builds.
 # Brigade does not delete builds on completion. Instead, it leaves builds around

@@ -1,0 +1,35 @@
+{{- if .Values.genericGateway.ingress.enabled -}}
+{{- $serviceName := include "brigade.genericGateway.fullname" . -}}
+{{- $servicePort := .Values.genericGateway.service.externalPort -}}
+{{- $paths := .Values.genericGateway.ingress.paths -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ $serviceName }}
+  labels:
+    app.kubernetes.io/name: {{ template "brigade.genericGateway.fullname" . }}
+    helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    {{- range $key, $value := .Values.genericGateway.ingress.annotations }}
+      {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  rules:
+    {{- range $host := .Values.genericGateway.ingress.hosts }}
+    - host: {{ $host }}
+      http:
+        paths:
+          {{- range $path := $paths }}
+          - path: {{ $path }}
+            backend:
+              serviceName: {{ $serviceName }}
+              servicePort: {{ $servicePort }}
+          {{- end -}}
+    {{- end -}}
+  {{- if .Values.genericGateway.ingress.tls }}
+  tls:
+{{ toYaml .Values.genericGateway.ingress.tls | indent 4 }}
+  {{- end -}}
+{{- end -}}
