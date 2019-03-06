@@ -3,26 +3,16 @@ const { events, Job, Group } = require("brigadier");
 const projectName = "brigade-charts";
 const sharedMountPrefix = `/mnt/brigade/share`;
 
-class HelmJob {
+class HelmJob extends Job {
   constructor (name) {
-    this.name = name;
+    super(name);
     this.image = "dtzar/helm-kubectl:latest";
+    this.imageForcePull = true;
     this.tasks = [
       "apk upgrade 1>/dev/null",
       "apk add --update --no-cache make 1>/dev/null",
       "cd /src"
     ]
-    this.job = new Job(this.name, this.image);
-  }
-
-  run() {
-    this.job.imageForcePull = true;
-    this.job.tasks = this.tasks;
-    return this.job.run();
-  }
-
-  logs() {
-    return this.job.logs();
   }
 }
 
@@ -32,6 +22,7 @@ function test(e, project) {
   tester.tasks.push(
     "make test"
   );
+
   return tester;
 }
 
