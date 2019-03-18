@@ -33,7 +33,7 @@ function build(e, project) {
   builder.tasks.push(
     "helm init -c",
     // Needed for fetching brigade's sub-charts (kashti, etc.)
-    "helm repo add brigade https://azure.github.io/brigade-charts",
+    "helm repo add brigade https://brigadecore.github.io/charts",
     "make build",
     "make index",
     `cp -a dist/ ${sharedMountPrefix}`,
@@ -95,7 +95,7 @@ class Notification {
     this.payload = e.payload;
     this.name = name;
     this.externalID = e.buildID;
-    this.detailsURL = `https://azure.github.io/kashti/builds/${ e.buildID }`;
+    this.detailsURL = `https://brigadecore.github.io/kashti/builds/${ e.buildID }`;
     this.title = "running check";
     this.text = "";
     this.summary = "";
