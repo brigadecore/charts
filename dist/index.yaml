@@ -249,7 +249,7 @@ entries:
     digest: 70dcbdfd754ac153c9741f35d3c00fc49a1b086a5215a700872b93f5f94ad9f4
     name: brigade-github-app
     sources:
-    - https://github.com/Azure/brigade-github-app
+    - https://github.com/brigadecore/brigade-github-app
     urls:
     - brigade-github-app-0.1.2.tgz
     version: 0.1.2

@@ -1,7 +1,7 @@
 
 # Brigade Charts
 
-Helm charts for the [Azure/Brigade](https://github.com/Azure/brigade) project
+Helm charts for the [brigadecore/Brigade](https://github.com/brigadecore/brigade) project
 
 **Under Construction**: Charts are currently being transferred to this repository from other sources.
 

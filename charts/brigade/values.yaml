@@ -8,7 +8,7 @@
 # RBAC, set `rbac.enabled` to `false`.
 #
 # To enable the GitHub gateway, set `brigade-github-app.enabled` to `true`.
-# See Azure/brigade-gitub-app for steps to setup a Github App and add its configuration
+# See brigadecore/brigade-gitub-app for steps to setup a Github App and add its configuration
 # to the sub-chart section below.
 #
 # Advanced Configuration

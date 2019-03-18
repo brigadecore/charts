@@ -23,7 +23,7 @@ later install the chart with:
 $ helm install -n my-project brigade/brigade-project -f values.yaml
 ```
 
-See the [Brigade Projects Guide](https://github.com/Azure/brigade/blob/master/docs/topics/projects.md) for more.
+See the [Brigade Projects Guide](https://github.com/brigadecore/brigade/blob/master/docs/topics/projects.md) for more.
 
 ### The Configurable Parameters
 
