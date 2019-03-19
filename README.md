@@ -1,9 +1,7 @@
 
 # Brigade Charts
 
-Helm charts for the [brigadecore/Brigade](https://github.com/brigadecore/brigade) project
-
-**Under Construction**: Charts are currently being transferred to this repository from other sources.
+Helm charts for the [Brigade](https://github.com/brigadecore/brigade) project.
 
 # Contributing
 
