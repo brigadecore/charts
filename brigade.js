@@ -1,6 +1,6 @@
 const { events, Job, Group } = require("brigadier");
 
-const projectName = "brigade-charts";
+const projectName = "brigadecore-charts";
 const sharedMountPrefix = `/mnt/brigade/share`;
 
 class HelmJob extends Job {
@@ -28,7 +28,7 @@ function test(e, project) {
 
 function build(e, project) {
   var builder = new HelmJob(`${projectName}-build`);
-  builder.job.storage.enabled = true;
+  builder.storage.enabled = true;
 
   builder.tasks.push(
     "helm init -c",
