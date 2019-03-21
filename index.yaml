@@ -3,9 +3,9 @@ entries:
   brigade:
   - apiVersion: v1
     appVersion: v0.20.0
-    created: 2019-03-21T15:38:37.72101485Z
+    created: 2019-03-21T15:55:08.328967778Z
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
-    digest: 2f8aadd4b0b1a4dbdb9e05ecda6640a557df5b1214df3807b3206e83fb8aec3b
+    digest: a2cd564c59e2c1d4eb3c509d5fd6e9e72e8a07c1bb239d8279e307db8bcf90f8
     name: brigade
     urls:
     - brigade-0.21.0.tgz
@@ -244,9 +244,9 @@ entries:
     version: 0.2.0
   brigade-github-app:
   - apiVersion: v1
-    created: 2019-03-21T15:38:37.721372853Z
+    created: 2019-03-21T15:55:08.329298781Z
     description: The Brigade GitHub App, an advanced gateway for GitHub
-    digest: 87080e8f1f3c2cdba4fefb83efdb1a0ca665fadd1c53d62d0a80dd85a9b1ed3f
+    digest: 7ad083aee100fe20ba6a304684a8a26bd508af9d7b6a4fd4780d50bf283b7128
     name: brigade-github-app
     sources:
     - https://github.com/brigadecore/brigade-github-app
@@ -264,10 +264,10 @@ entries:
   brigade-github-oauth:
   - apiVersion: v1
     appVersion: v0.20.0
-    created: 2019-03-21T15:38:37.721690655Z
+    created: 2019-03-21T15:55:08.329600483Z
     deprecated: true
     description: The legacy OAuth GitHub Gateway for Brigade
-    digest: b97af263ad5535df04b0ccfcc6fc36d0d57cc01f06fa4ef4d5b7214c3b94473e
+    digest: 458b452040c8857699c07c8d6e239d24dd482ef738b261a1856545aa3997f90b
     name: brigade-github-oauth
     sources:
     - https://github.com/brigadecore/github-gateway-oauth
@@ -276,9 +276,9 @@ entries:
     version: 0.1.0
   brigade-k8s-gateway:
   - apiVersion: v1
-    created: 2019-03-21T15:38:37.721895257Z
+    created: 2019-03-21T15:55:08.329836985Z
     description: A Helm chart for Kubernetes
-    digest: 8518d72d87ce4879b3e9aa40f6e5367d1dda75ae91630504ebcb57072548ead6
+    digest: 8cce268379bd6ec72bc3254e80ca5a819f27516719994616b9ea4156a66ff197
     name: brigade-k8s-gateway
     urls:
     - brigade-k8s-gateway-0.1.0.tgz
@@ -286,9 +286,9 @@ entries:
   brigade-project:
   - apiVersion: v1
     appVersion: v0.20.0
-    created: 2019-03-21T15:38:37.722418861Z
+    created: 2019-03-21T15:55:08.330318989Z
     description: Create a Brigade project
-    digest: 331c3c7c4a3a5f36901a5d4b537e4db50fe53f1ed2be6d04cbe63c6c91b47771
+    digest: 434c7913e0627c5f096fec54a70470ebcae1eabdf59b0d177073bb9f89fea63f
     name: brigade-project
     urls:
     - brigade-project-0.20.0.tgz
@@ -475,9 +475,9 @@ entries:
     version: 0.2.0
   kashti:
   - apiVersion: v1
-    created: 2019-03-21T15:38:37.722747863Z
+    created: 2019-03-21T15:55:08.330634991Z
     description: A Helm chart for Kubernetes
-    digest: 1b56d0bf6d8dc8af34c8a1a5954c2491ae25fdc0718bf70efb546d301261b523
+    digest: 4aaaba10cbd2b8c57c7efba645eaad8b2576b3718d082804f741677838ccad14
     name: kashti
     urls:
     - kashti-0.1.1.tgz
@@ -490,4 +490,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: 2019-03-21T15:38:37.719821441Z
+generated: 2019-03-21T15:55:08.326863462Z
