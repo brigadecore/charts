@@ -1,12 +1,12 @@
 # Name of the project, in the form "user/project"
-project: "deis/empty-testbed"
+project: "brigadecore/empty-testbed"
 
 # Domain/Org/Project
-repository: "github.com/deis/empty-testbed"
+repository: "github.com/brigadecore/empty-testbed"
 
 # The definitive clone URL. This can be any Git-supported URL format.
 # You may set this to "" for no clone URL.
-cloneURL: "https://github.com/deis/empty-testbed.git"
+cloneURL: "https://github.com/brigadecore/empty-testbed.git"
 
 # OPTIONAL: initGitSubmodules will recursively initialize all submodules in the repository. Default: false
 # initGitSubmodules: "false"
@@ -79,13 +79,13 @@ secrets:
 # OPTIONAL: vcsSidecar is the image that fetches a repo from a VCS
 # The default sidecar uses Git to fetch a copy of the project.
 #
-# If this is not supplied, `deis/git-sidecar:VERSION` will be used, where VERSION
+# If this is not supplied, `brigadecore/git-sidecar:VERSION` will be used, where VERSION
 # is the version of this chart.
 #
 # If this is set to NONE, no sidecar is used.  This may improve performance
 # very slightly, but will break some gateways or cause the default script to
 # be used.
-# vcsSidecar: "deis/git-sidecar:latest"
+# vcsSidecar: "brigadecore/git-sidecar:latest"
 
 # OPTIONAL: vcsSidecarResources defines the resources (limits/requests) for all
 # the init-containers to be created by the worker and the one for the worker itself
@@ -137,7 +137,7 @@ kubernetes:
 # OPTIONAL: Project-specific worker settings which takes precedence over brigade-wide settings
 # Useful when you want a specific brigade-worker image for running brigade.js of this project.
 worker:
-  #registry: deis
+  #registry: brigadecore
   #name: brigade-worker
   #tag:
   #pullPolicy: IfNotPresent

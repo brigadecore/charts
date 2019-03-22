@@ -3,7 +3,7 @@ rbac:
   enabled: false
 
 # Image configuration
-registry: deis
+registry: brigadecore
 name: brigade-k8s-gateway
 tag: latest
 pullPolicy: "IfNotPresent"

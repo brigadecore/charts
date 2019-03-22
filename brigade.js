@@ -111,7 +111,7 @@ class Notification {
   // Send a new notification, and return a Promise<result>.
   run() {
     this.count++
-    var j = new Job(`${ this.name }-${ this.count }`, "deis/brigade-github-check-run:latest");
+    var j = new Job(`${ this.name }-${ this.count }`, "brigadecore/brigade-github-check-run:latest");
     j.imageForcePull = true;
     j.env = {
       CHECK_CONCLUSION: this.conclusion,
