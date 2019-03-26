@@ -30,7 +30,7 @@ See the [Brigade Projects Guide](https://github.com/brigadecore/brigade/blob/mas
 This section explains each of the configuration directives available in the
 `values.yaml` for a Brigade project.
 
-A quick note on `deis/empty-testbed`: Early in our development cycle, we created
+A quick note on `brigadecore/empty-testbed`: Early in our development cycle, we created
 a simple GitHub repository that we could use for testing. Over time, that repository
 made its way into our documentation and demos. You are free to use it for testing.
 
@@ -41,7 +41,7 @@ convention for the project name is `user/project` or `org/project`, as you would
 see with GitHub, Dockerhub, and similar sites.
 
 ```yaml
-project: "deis/empty-testbed"
+project: "brigadecore/empty-testbed"
 ```
 
 #### `repository` (RECOMMENDED)
@@ -61,7 +61,7 @@ The `repository` directive is a protocol-neutral repository name. For
 GitHub projects, it should always been in the form `github.com/ORG/PROJECT`.
 
 ```yaml
-repository: "github.com/deis/empty-testbed"
+repository: "github.com/brigadecore/empty-testbed"
 ```
 
 This values is used by gateways to construct API calls to upstream VCS API
@@ -79,7 +79,7 @@ Set the `cloneURL` to the location where you want Brigade to fetch a copy of
 your source code repository.
 
 ```yaml
-cloneURL: "https://github.com/deis/empty-testbed.git"
+cloneURL: "https://github.com/brigadecore/empty-testbed.git"
 ```
 
 Note that there is no firm requirement that `cloneURL` and `repository` point to

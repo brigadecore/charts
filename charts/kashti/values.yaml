@@ -6,7 +6,7 @@ brigade:
 
 replicaCount: 1
 image:
-  repository: deis/kashti
+  repository: brigadecore/kashti
   tag: latest
   pullPolicy: IfNotPresent
 service:

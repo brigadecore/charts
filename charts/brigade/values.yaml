@@ -83,7 +83,7 @@ rbac:
 # controller is the main event processor in Brigade.
 controller:
   enabled: true
-  registry: deis
+  registry: brigadecore
   name: brigade-controller
   # tag should only be specified if you want to override Chart.appVersion
   # The default tag is the value of .Chart.AppVersion
@@ -108,7 +108,7 @@ controller:
 # brig) may not be able to learn about it.
 api:
   enabled: true
-  registry: deis
+  registry: brigadecore
   name: brigade-api
   # tag:
   service:
@@ -133,7 +133,7 @@ api:
 
 # worker is the JavaScript worker. These are created on demand by the controller.
 worker:
-  registry: deis
+  registry: brigadecore
   name: brigade-worker
   serviceAccount: 
     create: true
@@ -151,7 +151,7 @@ worker:
 # attacks on your cluster.
 cr:
   enabled: false
-  registry: deis
+  registry: brigadecore
   name: brigade-cr-gateway
   #tag: latest
   service:
@@ -174,7 +174,7 @@ cr:
 # To call this endpoint you need a special secret value that is configured once per project.
 genericGateway:
   enabled: false
-  registry: deis
+  registry: brigadecore
   name: brigade-generic-gateway
   #tag: latest
   service:
@@ -224,7 +224,7 @@ vacuum:
   # granularity than that may result in multiple vacuums running at once.
   # Format follows accepted Cron formats: https://en.wikipedia.org/wiki/Cron
   schedule: "@hourly"
-  registry: "deis"
+  registry: "brigadecore"
   name: "brigade-vacuum"
   # tag: latest
   # Age tells the vacuum how old a thing may be before it is considered ready to

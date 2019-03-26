@@ -1,4 +1,4 @@
-registry: deis
+registry: brigadecore
 name: brigade-github-gateway
 # Note: tag is currently pinned to v0.20.0, the last release of this gateway, via appVersion in this chart's Chart.yaml
 # Be sure the tag exists when changing this value

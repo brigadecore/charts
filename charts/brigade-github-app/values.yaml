@@ -7,7 +7,7 @@ serviceAccount:
   name: 
 
 # Image configuration
-registry: deis
+registry: brigadecore
 name: brigade-github-app
 tag: latest
 pullPolicy: "Always"
