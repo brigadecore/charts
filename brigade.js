@@ -60,17 +60,21 @@ function publish(e, project) {
 }
 
 function runSuite(e, p) {
-  runTests(e, p).catch(e => {console.error(e.toString())});
+  // Ignore webhook event if originating from the `gh-pages` branch serving chart artifacts
+  // (Builds would just fail as no brigade.js file exists on this branch)
+  if (! e.revision.ref.includes("gh-pages")) {
+    runTests(e, p).catch(e => {console.error(e.toString())});
 
-  // if master branch, publish charts
-  if (e.revision.ref.includes("master")) {
-    build(e, p).run()
-      .then(() => {
-        publish(e, p).run();
-      })
-      .catch((err) => {
-        console.log(err.toString());
-      });
+    // if master branch, publish charts
+    if (e.revision.ref.includes("master")) {
+      build(e, p).run()
+        .then(() => {
+          publish(e, p).run();
+        })
+        .catch((err) => {
+          console.log(err.toString());
+        });
+    }
   }
 }
 
