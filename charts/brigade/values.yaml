@@ -135,6 +135,7 @@ api:
 worker:
   registry: brigadecore
   name: brigade-worker
+  #command:
   serviceAccount: 
     create: true
     name: brigade-worker

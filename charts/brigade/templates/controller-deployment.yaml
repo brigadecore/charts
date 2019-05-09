@@ -46,6 +46,10 @@ spec:
             value: "{{ .Values.worker.registry }}/{{ .Values.worker.name }}:{{ default .Chart.AppVersion .Values.worker.tag }}"
           - name: BRIGADE_WORKER_PULL_POLICY
             value: {{ default "IfNotPresent" .Values.worker.pullPolicy }}
+          {{- if .Values.worker.command }}
+          - name: BRIGADE_WORKER_COMMAND
+            value: {{ .Values.worker.command | quote }}
+          {{- end }}
           - name: BRIGADE_WORKER_SERVICE_ACCOUNT
             value: {{ default "brigade-worker" .Values.worker.serviceAccount.name }}
       {{ if .Values.privateRegistry }}imagePullSecrets:
