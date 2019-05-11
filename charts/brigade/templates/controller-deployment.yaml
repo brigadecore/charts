@@ -48,6 +48,14 @@ spec:
             value: {{ default "IfNotPresent" .Values.worker.pullPolicy }}
           - name: BRIGADE_WORKER_SERVICE_ACCOUNT
             value: {{ default "brigade-worker" .Values.worker.serviceAccount.name }}
+          {{- if .Values.worker.defaultBuildStorageClass }}
+          - name: BRIGADE_DEFAULT_BUILD_STORAGE_CLASS
+            value: {{ .Values.worker.defaultBuildStorageClass }}
+          {{- end }}
+          {{- if .Values.worker.defaultCacheStorageClass }}
+          - name: BRIGADE_DEFAULT_CACHE_STORAGE_CLASS
+            value: {{ .Values.worker.defaultCacheStorageClass }}
+          {{- end }}
       {{ if .Values.privateRegistry }}imagePullSecrets:
         - name: {{.Values.privateRegistry}}{{ end }}
 {{ end }}
