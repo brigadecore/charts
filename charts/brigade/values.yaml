@@ -141,6 +141,8 @@ worker:
     name: brigade-worker
   #tag:
   #pullPolicy: IfNotPresent
+  #defaultBuildStorageClass:
+  #defaultCacheStorageClass:
 
 
 # These values are for the Container Registry (CR) gateway.
