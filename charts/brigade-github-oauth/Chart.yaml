@@ -3,7 +3,7 @@ description: The legacy OAuth GitHub Gateway for Brigade
 name: brigade-github-oauth
 sources:
   - https://github.com/brigadecore/github-gateway-oauth
-version: 0.1.0
+version: 0.0.1
 # Note: this appVersion is currently pinned to the last release of this gateway
 appVersion: v0.20.0
 deprecated: true
