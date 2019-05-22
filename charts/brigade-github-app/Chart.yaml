@@ -3,4 +3,4 @@ description: The Brigade GitHub App, an advanced gateway for GitHub
 name: brigade-github-app
 sources:
   - https://github.com/brigadecore/brigade-github-app
-version: 0.1.2
+version: 0.0.1

@@ -3,6 +3,8 @@ const { events, Job, Group } = require("brigadier");
 const projectName = "brigadecore-charts";
 const sharedMountPrefix = `/mnt/brigade/share`;
 
+const releaseTagRegex = /^refs\/tags\/([A-Za-z\-]+)\-v([0-9]+(?:\.[0-9]+)*(?:\-.+)?)$/
+
 class HelmJob extends Job {
   constructor (name) {
     super(name);
@@ -26,7 +28,7 @@ function test(e, project) {
   return tester;
 }
 
-function build(e, project) {
+function build(e, project, chartName, chartVersion) {
   var builder = new HelmJob(`${projectName}-build`);
   builder.storage.enabled = true;
 
@@ -34,9 +36,10 @@ function build(e, project) {
     "helm init -c",
     // Needed for fetching brigade's sub-charts (kashti, etc.)
     "helm repo add brigade https://brigadecore.github.io/charts",
-    "make build",
-    "make index",
-    `cp -a dist/ ${sharedMountPrefix}`,
+    `CHART=${chartName} VERSION=${chartVersion} make build`,
+    `curl -o dist/index.yaml https://raw.githubusercontent.com/${project.repo.name}/gh-pages/index.yaml`,
+    `make index`,
+    `cp -a dist/ ${sharedMountPrefix}`
   );
 
   return builder;
@@ -64,17 +67,6 @@ function runSuite(e, p) {
   // (Builds would just fail as no brigade.js file exists on this branch)
   if (! e.revision.ref.includes("gh-pages")) {
     runTests(e, p).catch(e => {console.error(e.toString())});
-
-    // if master branch, publish charts
-    if (e.revision.ref.includes("master")) {
-      build(e, p).run()
-        .then(() => {
-          publish(e, p).run();
-        })
-        .catch((err) => {
-          console.log(err.toString());
-        });
-    }
   }
 }
 
@@ -160,6 +152,23 @@ async function notificationWrap(job, note, conclusion) {
   }
 }
 
+function runPublish(e, p) {
+  // Only publish if e.revision.ref is a release tag
+  let matchStr = e.revision.ref.match(releaseTagRegex);
+  if (matchStr) {
+    let matchTokens = Array.from(matchStr);
+    let chartName = matchTokens[1];
+    let chartVersion = matchTokens[2];
+    build(e, p, chartName, chartVersion).run()
+    .then(() => {
+      publish(e, p).run();
+    })
+    .catch((err) => {
+      console.log(err.toString());
+    });
+  }
+}
+
 events.on("exec", (e, p) => {
   test(e, p).run();
 })
@@ -167,3 +176,4 @@ events.on("exec", (e, p) => {
 events.on("check_suite:requested", runSuite)
 events.on("check_suite:rerequested", runSuite)
 events.on("check_run:rerequested", runSuite)
+events.on("push", runPublish)

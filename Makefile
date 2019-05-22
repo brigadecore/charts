@@ -31,11 +31,14 @@ endef
 .PHONY: build
 build: clean
 ifndef CHART
-	$(call all-charts,build)
-else
-	@helm dep up $(CHARTS_DIR)/$(CHART)
-	@helm package -d $(SERVE_DIR) $(CHARTS_DIR)/$(CHART)
+	$(error CHART is undefined)
 endif
+ifndef VERSION
+	$(error VERSION is undefined)
+endif
+	@helm dep up $(CHARTS_DIR)/$(CHART)
+	@mkdir -p $(SERVE_DIR)
+	@helm package --version $(VERSION) -d $(SERVE_DIR) $(CHARTS_DIR)/$(CHART)
 
 .PHONY: test
 test:
@@ -47,6 +50,7 @@ endif
 
 .PHONY: index
 index:
+	@mkdir -p $(SERVE_DIR)
 	@helm repo index --merge $(SERVE_DIR)/index.yaml $(SERVE_DIR)
 
 # remove untracked sub-chart artifacts before rebuilding
