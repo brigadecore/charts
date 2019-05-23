@@ -39,6 +39,13 @@ spec:
             value: "{{ .Values.github.appID }}"
           - name: CHECK_SUITE_ON_PR
             value: "{{ .Values.github.checkSuiteOnPR }}"
+          {{- if .Values.github.defaultSharedSecret }}
+          - name: DEFAULT_SHARED_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: {{ $fullname }}
+                key: defaultSharedSecret
+          {{- end }}
         volumeMounts:
           - name: github-config
             mountPath: /etc/brigade-github-app

@@ -52,3 +52,4 @@ github:
   # Trigger a Check Suite on Pull Requests
   # This will need to be set to true to enable running Check Suites on PRs originating from forks
   checkSuiteOnPR: true
+  # defaultSharedSecret:
