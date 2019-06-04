@@ -9,8 +9,9 @@ serviceAccount:
 ## Image configuration
 registry: brigadecore
 name: brigade-github-app
-tag: latest
-pullPolicy: "Always"
+## Image tags in this chart default to the value specified by appVersion in Chart.yaml
+# tag: latest
+# pullPolicy: "Always"
 
 service:
   name: brigade-github-app
