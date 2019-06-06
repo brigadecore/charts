@@ -58,6 +58,11 @@ kashti:
 ## For full configuration, see the brigade-github-app chart in this repository
 brigade-github-app:
   enabled: false
+  github:
+    ## Set a defaultSharedSecret if you want to use this one instance of the
+    ## Github gateway with multiple Brigade projects. Leave the shared secret
+    ## field blank in project-level configuration and this default will be used.
+    # defaultSharedSecret:
 
 ## gw is the deprecated Oauth-based GitHub Gateway that shipped with Brigade <= v0.20
 ##
