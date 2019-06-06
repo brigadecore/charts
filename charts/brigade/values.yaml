@@ -190,6 +190,7 @@ genericGateway:
     type: ClusterIP  # Change to LoadBalancer if you want this externally available.
     externalPort: 8081
     internalPort: 8000
+    annotations: {}
   serviceAccount:
     create: true
     name:

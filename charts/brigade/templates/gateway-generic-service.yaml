@@ -9,6 +9,10 @@ metadata:
     app.kubernetes.io/managed-by: "{{ .Release.Service }}"
     role: gateway
     type: generic
+  {{- if .Values.genericGateway.service.annotations }}
+  annotations:
+{{ toYaml .Values.genericGateway.service.annotations | indent 4 }}
+  {{- end }}
 spec:
   type: {{ .Values.genericGateway.service.type }}
   ports:
