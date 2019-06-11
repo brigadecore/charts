@@ -66,7 +66,7 @@ function runSuite(e, p) {
   // Ignore webhook event if originating from the `gh-pages` branch serving chart artifacts
   // (Builds would just fail as no brigade.js file exists on this branch)
   if (! e.revision.ref.includes("gh-pages")) {
-    runTests(e, p).catch(e => {console.error(e.toString())});
+    return runTests(e, p);
   }
 }
 
@@ -82,6 +82,47 @@ function runTests(e, p) {
 
   // Send notification, run actual task, then send pass/fail notification
   return notificationWrap(test(e, p), note);
+}
+
+// runCheck is the default function invoked on a check_run:* event
+//
+// It determines which check is being requested (from the payload body)
+// and runs this particular check, or else throws an error if the check
+// is not found
+function runCheck(e, p) {
+  payload = JSON.parse(e.payload);
+
+  // Extract the check name
+  name = payload.body.check_run.name;
+
+  // Determine which check to run
+  switch(name) {
+    // This project currently has this one check for running tests
+    case "tests":
+      return runTests(e, p);
+    default:
+      throw new Error(`No check found with name: ${name}`);
+  }
+}
+
+// handleIssueComment handles an issue_comment event, parsing the comment text
+// and determining whether or not to trigger an action
+function handleIssueComment(e, p) {
+  console.log("handling issue comment....")
+  payload = JSON.parse(e.payload);
+
+  // Extract the comment body and trim whitespace
+  comment = payload.body.comment.body.trim();
+
+  // Here we determine if a comment should provoke an action
+  switch(comment) {
+    // Currently, the do-all '/brig run' comment is supported,
+    // for (re-)triggering the default Checks suite
+    case "/brig run":
+      return runSuite(e, p);
+    default:
+      console.log(`No applicable action found for comment: ${comment}`);
+  }
 }
 
 // A GitHub Check Suite notification
@@ -159,21 +200,20 @@ function runPublish(e, p) {
     let matchTokens = Array.from(matchStr);
     let chartName = matchTokens[1];
     let chartVersion = matchTokens[2];
-    build(e, p, chartName, chartVersion).run()
-    .then(() => {
-      publish(e, p).run();
-    })
-    .catch((err) => {
-      console.log(err.toString());
-    });
+    return build(e, p, chartName, chartVersion).run()
+      .then(() => {
+        publish(e, p).run();
+      });
   }
 }
 
 events.on("exec", (e, p) => {
-  test(e, p).run();
+  return test(e, p).run();
 })
 
 events.on("check_suite:requested", runSuite)
 events.on("check_suite:rerequested", runSuite)
-events.on("check_run:rerequested", runSuite)
+events.on("check_run:rerequested", runCheck)
+events.on("issue_comment:created", handleIssueComment);
+events.on("issue_comment:edited", handleIssueComment);
 events.on("push", runPublish)
