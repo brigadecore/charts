@@ -1,6 +1,5 @@
 rbac:
-  ## Set this to true to enable Kubernetes RBAC support (recommended)
-  enabled: false
+  enabled: true
 
 serviceAccount:
   create: true
