@@ -26,7 +26,7 @@ metadata:
     app.kubernetes.io/managed-by: "{{ .Release.Service }}"
 rules:
 - apiGroups: [""]
-  resources: ["secrets"]
+  resources: ["secrets", "pods"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ---
 kind: RoleBinding
