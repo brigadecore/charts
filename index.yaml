@@ -296,6 +296,14 @@ entries:
     version: 0.1.0
   brigade-k8s-gateway:
   - apiVersion: v1
+    created: "2019-06-19T16:39:50.420063189Z"
+    description: A Helm chart for Kubernetes
+    digest: 35349d7b07d62531d67f5304de17f89c96bbaf12c042cc1a091c140b75aa213b
+    name: brigade-k8s-gateway
+    urls:
+    - brigade-k8s-gateway-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
     created: "2019-05-16T17:33:36.717902003Z"
     description: A Helm chart for Kubernetes
     digest: 5622fd597abf88b323639845a5c101af0bdbbd5edfe2f4ffcf8591c38991eab8
@@ -519,4 +527,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2019-06-04T21:11:56.545921199Z"
+generated: "2019-06-19T16:39:50.419578674Z"
