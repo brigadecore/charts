@@ -295,6 +295,18 @@ entries:
   brigade-github-oauth:
   - apiVersion: v1
     appVersion: v0.20.0
+    created: "2019-06-19T16:45:18.638510171Z"
+    deprecated: true
+    description: The legacy OAuth GitHub Gateway for Brigade
+    digest: 7ffd8f010a087c5b428a7eb9c85367851e0654d00f29d2a4f52959be2c5ccebe
+    name: brigade-github-oauth
+    sources:
+    - https://github.com/brigadecore/github-gateway-oauth
+    urls:
+    - brigade-github-oauth-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: v0.20.0
     created: "2019-05-16T17:33:36.717541291Z"
     deprecated: true
     description: The legacy OAuth GitHub Gateway for Brigade
@@ -530,4 +542,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2019-06-19T16:42:17.53901086Z"
+generated: "2019-06-19T16:45:18.637978955Z"
