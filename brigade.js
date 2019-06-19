@@ -3,12 +3,12 @@ const { events, Job, Group } = require("brigadier");
 const projectName = "brigadecore-charts";
 const sharedMountPrefix = `/mnt/brigade/share`;
 
-const releaseTagRegex = /^refs\/tags\/([A-Za-z\-]+)\-v([0-9]+(?:\.[0-9]+)*(?:\-.+)?)$/
+const releaseTagRegex = /^refs\/tags\/([A-Za-z0-9\-]+)\-v([0-9]+(?:\.[0-9]+)*(?:\-.+)?)$/
 
 class HelmJob extends Job {
   constructor (name) {
     super(name);
-    this.image = "dtzar/helm-kubectl:latest";
+    this.image = "dtzar/helm-kubectl:2.14.1";
     this.imageForcePull = true;
     this.tasks = [
       "apk upgrade 1>/dev/null",
@@ -36,6 +36,7 @@ function build(e, project, chartName, chartVersion) {
     "helm init -c",
     // Needed for fetching brigade's sub-charts (kashti, etc.)
     "helm repo add brigade https://brigadecore.github.io/charts",
+    `echo "Building chart: ${chartName} with version: ${chartVersion}"`,
     `CHART=${chartName} VERSION=${chartVersion} make build`,
     `curl -o dist/index.yaml https://raw.githubusercontent.com/${project.repo.name}/gh-pages/index.yaml`,
     `make index`,
