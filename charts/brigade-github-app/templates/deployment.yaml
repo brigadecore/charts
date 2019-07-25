@@ -33,6 +33,8 @@ spec:
                 fieldPath: metadata.namespace
           - name: BRIGADE_AUTHORS
             value: {{ if .Values.gateway.allowedAuthorRoles }}{{ join "," .Values.gateway.allowedAuthorRoles | quote }}{{ end }}
+          - name: BRIGADE_EVENTS
+            value: {{ if .Values.gateway.emittedEvents }}{{ join "," .Values.gateway.emittedEvents | quote }}{{ end }}
           - name: GATEWAY_CONFIG
             value: "/etc/brigade-github-app/key.pem"
           - name: APP_ID

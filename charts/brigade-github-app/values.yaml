@@ -41,6 +41,13 @@ gateway:
   - OWNER
   - MEMBER
   - COLLABORATOR
+  ## The opt-in list of events to be emitted
+  ## Brigade creates one or two worker pods for each webhook request so
+  ## ignoring unnecessary events saves your cluster's resource.
+  ## Defaults to "*" that matches any event type and action.
+  ## Remove "*" and set qualified(e.g. `issue_comment:created`) or unqualified(e.g. `issue_comment`) events instead so that Brigade emit creates worker pods for those events only.
+  emittedEvents:
+  - "*"
 
 github:
   ## The x509 PEM-formatted keyfile GitHub issued for you App.
