@@ -7,8 +7,10 @@ brigade:
 replicaCount: 1
 image:
   repository: brigadecore/kashti
-  tag: latest
-  pullPolicy: IfNotPresent
+  ## tag should only be specified if you want to override Chart.appVersion
+  ## The default tag is the value of .Chart.AppVersion
+  # tag:
+  # pullPolicy: IfNotPresent
 service:
   name: kashti
   type: ClusterIP
