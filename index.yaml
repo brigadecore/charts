@@ -3,6 +3,15 @@ entries:
   brigade:
   - apiVersion: v1
     appVersion: v1.1.0
+    created: "2019-07-30T19:34:28.490023361Z"
+    description: Brigade provides event-driven scripting of Kubernetes pipelines.
+    digest: aa284adb8abd3e172353381ae203dda098d8f52829e92478b5770e9c16a24dd1
+    name: brigade
+    urls:
+    - brigade-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v1
+    appVersion: v1.1.0
     created: "2019-06-19T23:14:18.882728845Z"
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: eaad35a4ffd0a65bb16f81d1362980fafb7650af32acbebb8806efeea15a96ac
@@ -560,4 +569,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2019-07-30T17:31:52.097741336Z"
+generated: "2019-07-30T19:34:28.488507211Z"
