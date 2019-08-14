@@ -4,9 +4,9 @@ dependencies:
   version: 0.4.0
 - name: brigade-github-app
   repository: https://brigadecore.github.io/charts
-  version: 0.3.0
+  version: 0.4.0
 - name: brigade-github-oauth
   repository: https://brigadecore.github.io/charts
   version: 0.2.0
-digest: sha256:c9edbb2dcf28bb99e96190802cd98f1e301a19cada768e34c1d7e8a759fc8a62
-generated: "2019-08-14T17:19:11.149391-04:00"
+digest: sha256:531cd37cc4ba056b9dd55ee0a5e52bd19d04ee1e2ed0a5c22c7c9e9627952029
+generated: "2019-08-14T19:02:52.980831-04:00"
