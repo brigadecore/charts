@@ -1,6 +1,6 @@
 dependencies:
   - name: kashti
-    version: 0.3.0
+    version: 0.4.0
     repository: https://brigadecore.github.io/charts
     condition: kashti.enabled
   - name: brigade-github-app
