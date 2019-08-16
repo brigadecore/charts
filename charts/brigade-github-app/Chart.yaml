@@ -5,4 +5,4 @@ sources:
   - https://github.com/brigadecore/brigade-github-app
 version: 0.0.1
 # Note that we use appVersion to get images, so make sure this is correct.
-appVersion: v0.2.0
+appVersion: v0.2.1
