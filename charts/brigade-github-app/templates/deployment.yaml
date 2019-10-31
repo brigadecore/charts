@@ -53,5 +53,5 @@ spec:
             mountPath: /etc/brigade-github-app
       volumes:
         - name: github-config
-          configMap:
-            name: {{ $fullname }}
+          secret:
+            secretName: {{ $fullname }}
