@@ -104,6 +104,9 @@ controller:
   serviceAccount:
     create: true
     name: 
+  ## Add custom annotations to the controller pod
+  # podAnnotations:
+  #   name: value
 
 ## api is the API server. It is technically not needed for the operation of the
 ## Brigade controller, but it is used by tools to learn about the state of the
@@ -135,6 +138,9 @@ api:
   serviceAccount:
     create: true
     name: 
+  ## Add custom annotations to the api pod
+  # podAnnotations:
+  #   name: value
 
 ## worker is the JavaScript worker. These are created on demand by the controller.
 worker:
@@ -176,6 +182,9 @@ cr:
   serviceAccount:
     create: true
     name: 
+  ## Add custom annotations to the cr gateway pod
+  # podAnnotations:
+  #   name: value
 
 ## These values are for the Generic Gateway.
 ## Enabling this will start a service that handles webhooks from external clients. 
@@ -196,6 +205,9 @@ genericGateway:
     name:
   ingress:
     enabled: false
+  ## Add custom annotations to the generic gateway pod
+  # podAnnotations:
+  #   name: value
 
     ## use the correct annotation for your certificate provider
     ## the following config works according to the Brigade docs

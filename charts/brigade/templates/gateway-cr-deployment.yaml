@@ -16,6 +16,10 @@ spec:
   replicas: 1
   template:
     metadata:
+    {{- if .Values.cr.podAnnotations }}
+      annotations:
+{{ toYaml .Values.cr.podAnnotations | indent 8}}
+    {{- end }}
       labels:
         app.kubernetes.io/name: {{ template "brigade.fullname" . }}
         app: {{ template "brigade.fullname" . }}

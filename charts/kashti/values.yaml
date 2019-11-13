@@ -40,3 +40,7 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
+## Add custom annotations to the kashti pod
+# podAnnotations:
+#   name: value

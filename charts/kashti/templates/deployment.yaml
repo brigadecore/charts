@@ -14,6 +14,9 @@ spec:
       annotations:
         checksum/config-js: {{ include (print $.Template.BasePath "/js-configmap.yaml") . | sha256sum }}
         checksum/config-nginx: {{ include (print $.Template.BasePath "/nginx-configmap.yaml") . | sha256sum }}
+    {{- if .Values.podAnnotations }}
+{{ toYaml .Values.podAnnotations | indent 8}}
+    {{- end }}
       labels:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}

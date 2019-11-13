@@ -7,6 +7,10 @@ name: brigade-k8s-gateway
 tag: latest
 pullPolicy: "IfNotPresent"
 
+## Add custom annotations to the pod
+# podAnnotations:
+#   name: value
+
 ## What to watch
 project: brigade-830c16d4aaf6f5490937ad719afd8490a5bcbef064d397411043ac
 

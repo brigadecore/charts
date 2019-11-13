@@ -14,6 +14,10 @@ spec:
   replicas: 1
   template:
     metadata:
+    {{- if .Values.controller.podAnnotations }}
+      annotations:
+{{ toYaml .Values.controller.podAnnotations | indent 8}}
+    {{- end }}
       labels:
         app.kubernetes.io/name: {{ $fullname }}
         app: {{ $fullname }}
