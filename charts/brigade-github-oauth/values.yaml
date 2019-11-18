@@ -47,3 +47,7 @@ ingress:
   ## Add custom annotations
   # annotations:
   #   name: value
+
+## Add custom annotations to the pod
+# podAnnotations:
+#   name: value

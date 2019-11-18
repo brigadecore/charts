@@ -63,3 +63,7 @@ github:
   ## Github gateway with multiple Brigade projects. Leave the shared secret field
   ## blank in project-level configuration and this default will be used.
   # defaultSharedSecret:
+
+  ## Add custom annotations to the api pod
+  # podAnnotations:
+  #   name: value
