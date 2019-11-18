@@ -400,18 +400,6 @@ entries:
   brigade-github-oauth:
   - apiVersion: v1
     appVersion: v0.20.0
-    created: "2019-11-18T18:41:30.911855583Z"
-    deprecated: true
-    description: The legacy OAuth GitHub Gateway for Brigade
-    digest: eeea11469f6da26556c7b3beb03306ebdee9db595b059394d8a04891b9bed732
-    name: brigade-github-oauth
-    sources:
-    - https://github.com/brigadecore/github-gateway-oauth
-    urls:
-    - brigade-github-oauth-0.2.1.tgz
-    version: 0.2.1
-  - apiVersion: v1
-    appVersion: v0.20.0
     created: "2019-06-19T16:45:18.638510171Z"
     deprecated: true
     description: The legacy OAuth GitHub Gateway for Brigade
@@ -435,6 +423,14 @@ entries:
     - brigade-github-oauth-0.1.0.tgz
     version: 0.1.0
   brigade-k8s-gateway:
+  - apiVersion: v1
+    created: "2019-11-18T18:42:23.207498446Z"
+    description: A Helm chart for Kubernetes
+    digest: 292b5c61c720248a4b059a6c0380d3b10c39ba2c2440cb78aa962adfd8e7ac71
+    name: brigade-k8s-gateway
+    urls:
+    - brigade-k8s-gateway-0.2.1.tgz
+    version: 0.2.1
   - apiVersion: v1
     created: "2019-05-16T17:33:36.717902003Z"
     description: A Helm chart for Kubernetes
@@ -677,4 +673,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2019-11-18T18:41:30.911310959Z"
+generated: "2019-11-18T18:42:23.207041633Z"
