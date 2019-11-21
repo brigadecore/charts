@@ -1,7 +1,7 @@
 {{ if .Values.api.enabled }}
 {{ $fullname := include "brigade.api.fullname" . }}
 {{ $serviceAccount := default $fullname .Values.api.serviceAccount.name }}
-apiVersion: extensions/v1beta1
+apiVersion: {{ template "deployment.apiVersion" . }}
 kind: Deployment
 metadata:
   name: {{ template "brigade.fullname" . }}-api
@@ -13,6 +13,11 @@ metadata:
     role: api
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ template "brigade.fullname" . }}-api
+      app: {{ template "brigade.fullname" . }}-api
+      role: api
   template:
     metadata:
     {{- if .Values.api.podAnnotations }}

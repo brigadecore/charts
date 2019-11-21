@@ -1,7 +1,7 @@
 {{ if .Values.cr.enabled }}
 {{ $fullname := include "brigade.cr.fullname" . }}
 {{ $serviceAccount := default $fullname .Values.cr.serviceAccount.name }}
-apiVersion: extensions/v1beta1
+apiVersion: {{ template "deployment.apiVersion" . }}
 kind: Deployment
 metadata:
   name: {{ $fullname }}
@@ -14,6 +14,12 @@ metadata:
     type: dockerhub
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ template "brigade.fullname" . }}
+      app: {{ template "brigade.fullname" . }}
+      role: gateway
+      type: dockerhub
   template:
     metadata:
     {{- if .Values.cr.podAnnotations }}

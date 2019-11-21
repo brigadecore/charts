@@ -2,7 +2,7 @@
 {{- $serviceName := include "brigade.genericGateway.fullname" . -}}
 {{- $servicePort := .Values.genericGateway.service.externalPort -}}
 {{- $paths := .Values.genericGateway.ingress.paths -}}
-apiVersion: extensions/v1beta1
+apiVersion: {{ template "networking.apiVersion" . }}
 kind: Ingress
 metadata:
   name: {{ $serviceName }}
