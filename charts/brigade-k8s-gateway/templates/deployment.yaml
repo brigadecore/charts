@@ -1,5 +1,5 @@
 {{ $fullname :=  include "gateway.fullname" . }}
-apiVersion: extensions/v1beta1
+apiVersion: {{ template "deployment.apiVersion" . }}
 kind: Deployment
 metadata:
   name: {{ $fullname }}
@@ -12,6 +12,11 @@ metadata:
     type: kubernetes-events
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: {{ $fullname }}
+      role: gateway
+      type: kubernetes-events
   template:
     metadata:
     {{- if .Values.podAnnotations }}

@@ -1,6 +1,6 @@
 {{ $fullname :=  include "gateway.fullname" . }}
 {{ $serviceAccount := default $fullname .Values.serviceAccount.name }}
-apiVersion: extensions/v1beta1
+apiVersion: {{ template "deployment.apiVersion" . }}
 kind: Deployment
 metadata:
   name: {{ $fullname }}
@@ -13,6 +13,12 @@ metadata:
     type: github-app
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: {{ $fullname }}
+      role: gateway
+      release: "{{ .Release.Name }}"
+      type: github-app
   template:
     metadata:
     {{- if .Values.podAnnotations }}
