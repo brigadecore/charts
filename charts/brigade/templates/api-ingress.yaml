@@ -2,7 +2,7 @@
 {{- $serviceName := include "brigade.api.fullname" . -}}
 {{- $servicePort := .Values.api.service.externalPort -}}
 {{- $paths := .Values.api.ingress.paths -}}
-apiVersion: extensions/v1beta1
+apiVersion: {{ template "networking.apiVersion" . }}
 kind: Ingress
 metadata:
   name: {{ $serviceName }}
