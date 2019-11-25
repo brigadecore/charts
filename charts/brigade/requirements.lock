@@ -1,12 +1,12 @@
 dependencies:
 - name: kashti
   repository: https://brigadecore.github.io/charts
-  version: 0.4.0
+  version: 0.5.0
 - name: brigade-github-app
   repository: https://brigadecore.github.io/charts
-  version: 0.4.1
+  version: 0.5.0
 - name: brigade-github-oauth
   repository: https://brigadecore.github.io/charts
-  version: 0.2.0
-digest: sha256:b556135c790a819bc1c2914dde6aec89c2b7467298b36000229229aaf9800c09
-generated: "2019-08-16T19:12:40.678501-04:00"
+  version: 0.3.0
+digest: sha256:fd5109fb5db6c7c84f2b376322806219bc30ada29149595658fe18c4a1680539
+generated: "2019-11-25T10:29:44.467372-07:00"
