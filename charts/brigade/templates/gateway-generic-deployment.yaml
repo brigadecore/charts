@@ -15,7 +15,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchlabels:
+    matchLabels:
       app.kubernetes.io/name: {{ template "brigade.fullname" . }}
       app: {{ template "brigade.fullname" . }}
       role: gateway
