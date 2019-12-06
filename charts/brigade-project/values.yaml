@@ -23,6 +23,17 @@ cloneURL: "https://github.com/brigadecore/empty-testbed.git"
 ## OPTIONAL: defaultScriptName is the name of a configmap used as a fallback brigade.js.
 # defaultScriptName: default-script-cm
 
+## OPTIONAL: defaultConfig is the brigade.json config used by default when your VCS repo has none
+# defaultConfig: |
+#   {
+#     "dependencies": {
+#         "@brigadecore/brigade-utils": "0.3.0"
+#     }
+#   }
+
+## OPTIONAL: defaultConfigName is the name of a configmap used as a fallback brigade.js.
+# defaultConfigName: default-config-cm
+
 
 ## Used by GitHub and other services to compute hook HMACs.
 sharedSecret: "IBrakeForSeaBeasts"
