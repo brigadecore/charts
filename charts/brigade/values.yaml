@@ -262,7 +262,14 @@ vacuum:
   serviceAccount:
     create: true
     name: 
-
+  ## The following options have to do with cleaning up after the vacuum jobs
+  ## themselves so completed jobs don't endlessly accumulate in the cluster.
+  ##
+  ## The maximum number of successful vacuum jobs to retain in the cluster.
+  ## Set this to 0 if you feel like no news is good news.
+  successfulJobsHistoryLimit: 10
+  ## The maximum number of failed vacuum jobs to retain in the cluster.
+  failedJobsHistoryLimit: 10
 
 ## DEVELOPMENT ONLY: Use this for off-ACS development
 ## Before enabling this, log into the acr registry with Docker and then
