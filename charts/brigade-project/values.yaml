@@ -82,11 +82,6 @@ secrets:
   ## Example:
   # username: hello
 
-## OPTIONAL: Namespace into which builds will be deployed.
-## Using this has implications for what you can access, so don't set this unless
-## you know what you are doing.
-# namespace: "default"
-
 ## OPTIONAL: vcsSidecar is the image that fetches a repo from a VCS
 ## The default sidecar uses Git to fetch a copy of the project.
 ##
