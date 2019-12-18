@@ -23,11 +23,7 @@ endif
 # all-charts loops through all charts and runs the make target(s) provided
 define all-charts
 	@for chart in $$(ls -1 $(CHARTS_DIR)); do \
-		CHART=$$chart make $(MAKE_OPTS) $(1) ; \
-		exit_code=$$? ; \
-		if [[ $$exit_code -ne 0 ]] ; then \
-			exit $$exit_code ; \
-		fi ; \
+		CHART=$$chart make $(MAKE_OPTS) $(1) || exit $$? ; \
 	done
 endef
 
