@@ -103,7 +103,7 @@ controller:
   #     memory:
   serviceAccount:
     create: true
-    name: 
+    name:
   ## Add custom annotations to the controller pod
   # podAnnotations:
   #   name: value
@@ -137,7 +137,7 @@ api:
     - /
   serviceAccount:
     create: true
-    name: 
+    name:
   ## Add custom annotations to the api pod
   # podAnnotations:
   #   name: value
@@ -147,7 +147,7 @@ worker:
   registry: brigadecore
   name: brigade-worker
   # command:
-  serviceAccount: 
+  serviceAccount:
     create: true
     name: brigade-worker
   # tag:
@@ -181,13 +181,13 @@ cr:
   #   initialDelaySeconds: 20
   serviceAccount:
     create: true
-    name: 
+    name:
   ## Add custom annotations to the cr gateway pod
   # podAnnotations:
   #   name: value
 
 ## These values are for the Generic Gateway.
-## Enabling this will start a service that handles webhooks from external clients. 
+## Enabling this will start a service that handles webhooks from external clients.
 ## To call this endpoint you need a special secret value that is configured once per project.
 genericGateway:
   enabled: false
@@ -217,7 +217,7 @@ genericGateway:
     ## to delete the secret before trying again.
 
     # annotations:
-    #   kubernetes.io/ingress.class: "nginx"    
+    #   kubernetes.io/ingress.class: "nginx"
     #   certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
     #   certmanager.k8s.io/acme-challenge-type: http01
 
@@ -261,7 +261,7 @@ vacuum:
   maxBuilds: -1
   serviceAccount:
     create: true
-    name: 
+    name:
   ## The following options have to do with cleaning up after the vacuum jobs
   ## themselves so completed jobs don't endlessly accumulate in the cluster.
   ##
