@@ -353,6 +353,17 @@ entries:
   brigade-github-app:
   - apiVersion: v1
     appVersion: v0.2.1
+    created: "2020-01-06T23:22:20.629001001Z"
+    description: The Brigade GitHub App, an advanced gateway for GitHub
+    digest: 270d85fe4e765bf7972b5203291c1a41901e7637a761da6bc2ed6164982dc6f0
+    name: brigade-github-app
+    sources:
+    - https://github.com/brigadecore/brigade-github-app
+    urls:
+    - brigade-github-app-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v1
+    appVersion: v0.2.1
     created: "2019-11-25T17:19:11.415202203Z"
     description: The Brigade GitHub App, an advanced gateway for GitHub
     digest: f998dacf3cde1cdc680aae5c334ff5d26d1a8e89c405d8b024ee1773727e0c07
@@ -741,4 +752,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-06T19:06:47.648265809Z"
+generated: "2020-01-06T23:22:20.628410684Z"
