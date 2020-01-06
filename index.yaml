@@ -3,6 +3,15 @@ entries:
   brigade:
   - apiVersion: v1
     appVersion: v1.2.1
+    created: "2020-01-06T23:24:27.939427019Z"
+    description: Brigade provides event-driven scripting of Kubernetes pipelines.
+    digest: e0788d6552ed970a7713b2f0c9ec5a1b34db718e1b061c31cd0de9aa9d85f735
+    name: brigade
+    urls:
+    - brigade-1.4.3.tgz
+    version: 1.4.3
+  - apiVersion: v1
+    appVersion: v1.2.1
     created: "2019-11-26T19:22:31.140904731Z"
     description: Brigade provides event-driven scripting of Kubernetes pipelines.
     digest: 23ebd3251a0c430bc399ae6e70aa023672479dd156310de4ce3310acef8225c2
@@ -351,17 +360,6 @@ entries:
     - brigade-0.2.0.tgz
     version: 0.2.0
   brigade-github-app:
-  - apiVersion: v1
-    appVersion: v0.2.1
-    created: "2020-01-06T23:22:20.629001001Z"
-    description: The Brigade GitHub App, an advanced gateway for GitHub
-    digest: 270d85fe4e765bf7972b5203291c1a41901e7637a761da6bc2ed6164982dc6f0
-    name: brigade-github-app
-    sources:
-    - https://github.com/brigadecore/brigade-github-app
-    urls:
-    - brigade-github-app-0.5.1.tgz
-    version: 0.5.1
   - apiVersion: v1
     appVersion: v0.2.1
     created: "2019-11-25T17:19:11.415202203Z"
@@ -752,4 +750,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-06T23:22:20.628410684Z"
+generated: "2020-01-06T23:24:27.937661954Z"
