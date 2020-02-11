@@ -3,4 +3,4 @@ description: Brigade provides event-driven scripting of Kubernetes pipelines.
 name: brigade
 version: 0.0.1
 # Note that we use appVersion to get images, so make sure this is correct.
-appVersion: v1.2.1
+appVersion: v1.3.0
