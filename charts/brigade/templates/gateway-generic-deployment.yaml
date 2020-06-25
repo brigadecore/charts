@@ -32,6 +32,10 @@ spec:
         role: gateway
         type: generic
     spec:
+      {{ if .Values.genericGateway.affinity }}
+      affinity:
+{{ toYaml .Values.genericGateway.affinity | indent 8}}
+      {{- end }}
       serviceAccountName: {{ $serviceAccount }}
       containers:
       - name: {{ .Chart.Name }}

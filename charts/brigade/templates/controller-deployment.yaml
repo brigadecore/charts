@@ -29,6 +29,10 @@ spec:
         role: controller
     spec:
       serviceAccountName: {{ $serviceAccount }}
+      {{ if .Values.controller.affinity }}
+      affinity:
+{{ toYaml .Values.controller.affinity | indent 8}}
+      {{- end }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.controller.registry }}/{{ .Values.controller.name }}:{{ default .Chart.AppVersion .Values.controller.tag }}"
@@ -45,6 +49,12 @@ spec:
         - -worker-limits-cpu={{ default "" .Values.controller.workerResources.limits.cpu }}
         - -worker-limits-memory={{ default "" .Values.controller.workerResources.limits.memory }}
         {{- end }}
+        {{- end }}
+        {{ if .Values.controller.workerNodePoolKey }}
+        - -worker-node-pool-key={{ default "" .Values.controller.workerNodePoolKey }}
+        {{- end }}
+        {{ if .Values.controller.workerNodePoolValue }}
+        - -worker-node-pool-value={{ default "" .Values.controller.workerNodePoolValue }}
         {{- end }}
         env:
           - name: BRIGADE_NAMESPACE

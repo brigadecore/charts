@@ -32,6 +32,10 @@ spec:
         type: github-app
     spec:
       serviceAccountName: {{ $serviceAccount }}
+      {{ if .Values.github.affinity }}
+      affinity:
+{{ toYaml .Values.github.affinity | indent 8}}
+      {{- end }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.registry }}/{{ .Values.name }}:{{ default .Chart.AppVersion .Values.tag }}"

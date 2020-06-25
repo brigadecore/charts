@@ -23,6 +23,10 @@ spec:
             role: vacuum
         spec:
           serviceAccountName: {{ $serviceAccount }}
+          {{- if .Values.vacuum.affinity }}
+          affinity:
+{{ toYaml .Values.vacuum.affinity | indent 12}}
+          {{ end }}
           containers:
           - name: {{ .Chart.Name }}-vacuum
             image: "{{ .Values.vacuum.registry }}/{{ .Values.vacuum.name }}:{{ default .Chart.AppVersion .Values.vacuum.tag }}"
