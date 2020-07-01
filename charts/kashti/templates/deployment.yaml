@@ -25,9 +25,9 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
-      {{- if .Values.kashti.affinity }}
+      {{- if .Values.affinity }}
       affinity:
-{{ toYaml .Values.kashti.affinity | indent 10}}
+{{ toYaml .Values.affinity | indent 10}}
       {{ end }}
       containers:
         - name: {{ .Chart.Name }}

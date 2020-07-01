@@ -45,17 +45,17 @@
 kashti:
   enabled: true
   kashti:
-    affinity: {}
-    # Azure specific example
-    #affinity:
-    #  nodeAffinity:
-    #    requiredDuringSchedulingIgnoredDuringExecution:
-    #      nodeSelectorTerms:
-    #      - matchExpressions:
-    #        - key: agentpool
-    #          operator: In
-    #          values:
-    #          - nodepool01
+  affinity: {}
+  # Azure specific example
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
 
 ## Brigade Github App, the GitHub Gateway for Brigade, is disabled by default.
 ##
@@ -71,17 +71,17 @@ kashti:
 brigade-github-app:
   enabled: false
   github:
-    affinity: {}
-    # Azure specific example
-    #affinity:
-    #  nodeAffinity:
-    #    requiredDuringSchedulingIgnoredDuringExecution:
-    #      nodeSelectorTerms:
-    #      - matchExpressions:
-    #        - key: agentpool
-    #          operator: In
-    #          values:
-    #          - nodepool01
+  affinity: {}
+  # Azure specific example
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
     ## Set a defaultSharedSecret if you want to use this one instance of the
     ## Github gateway with multiple Brigade projects. Leave the shared secret
     ## field blank in project-level configuration and this default will be used.

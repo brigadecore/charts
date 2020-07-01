@@ -32,9 +32,9 @@ spec:
         type: github-app
     spec:
       serviceAccountName: {{ $serviceAccount }}
-      {{ if .Values.github.affinity }}
+      {{ if .Values.affinity }}
       affinity:
-{{ toYaml .Values.github.affinity | indent 8}}
+{{ toYaml .Values.affinity | indent 8}}
       {{- end }}
       containers:
       - name: {{ .Chart.Name }}
