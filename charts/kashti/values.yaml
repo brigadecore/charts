@@ -44,3 +44,15 @@ resources: {}
 ## Add custom annotations to the kashti pod
 # podAnnotations:
 #   name: value
+
+affinity: {}
+# Azure specific example
+#affinity:
+#  nodeAffinity:
+#    requiredDuringSchedulingIgnoredDuringExecution:
+#      nodeSelectorTerms:
+#      - matchExpressions:
+#        - key: agentpool
+#          operator: In
+#          values:
+#          - nodepool01
