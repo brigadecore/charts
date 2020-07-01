@@ -44,7 +44,6 @@
 ## For full configuration, see the kashti chart in this repository and its values.yaml.
 kashti:
   enabled: true
-  kashti:
   affinity: {}
   # Azure specific example
   #affinity:
