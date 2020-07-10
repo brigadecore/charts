@@ -53,12 +53,14 @@ github:
 ## OPTIONAL: Use this for private repositories
 ## This is the PRIVATE key that Brigade will use to clone a private repo.
 ## You should generate a special key for this. Don't reuse another one.
-# sshKey: |-
-  # -----BEGIN RSA PRIVATE KEY-----
-  # IIEpAIBAAKCAg1wyZD164xNLrANjRrcsbieLwHJ6fKD3LC19E...
-  # ...
-  # ...
-  # -----END RSA PRIVATE KEY-----
+# ssh:
+#   key: |-
+#     -----BEGIN RSA PRIVATE KEY-----
+#     IIEpAIBAAKCAg1wyZD164xNLrANjRrcsbieLwHJ6fKD3LC19E...
+#     ...
+#     ...
+#     -----END RSA PRIVATE KEY-----
+#   cert:
 
 ## OPTIONAL: Items in the 'secrets' array can be mounted as environment variables by
 ## the brigade.js
