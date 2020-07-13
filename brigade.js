@@ -51,7 +51,7 @@ function publish(e, project) {
   publisher.storage.enabled = true;
 
   publisher.tasks = [
-    "npm install -g gh-pages",
+    "npm install -g gh-pages@3.0.0",
     "cd /src",
     `cp -a ${sharedMountPrefix}/dist .`,
     `gh-pages --add -d dist \
