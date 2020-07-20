@@ -67,3 +67,15 @@ github:
   ## Add custom annotations to the api pod
   # podAnnotations:
   #   name: value
+
+affinity: {}
+# Azure specific example
+#affinity:
+#  nodeAffinity:
+#    requiredDuringSchedulingIgnoredDuringExecution:
+#      nodeSelectorTerms:
+#      - matchExpressions:
+#        - key: agentpool
+#          operator: In
+#          values:
+#          - nodepool01

@@ -94,6 +94,24 @@ controller:
   ## The default tag is the value of .Chart.AppVersion
   # tag:
   # pullPolicy: IfNotPresent
+
+  ## values for creating affinities for brigade worker
+  # workerNodePoolKey: agentpool
+  # workerNodePoolValue: nodepool01
+
+  # affinity commands where to schedule controller pod
+  affinity: {}
+  # Azure specific example
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
+
   # workerResources:
   #   limits:
   #     cpu:
@@ -138,6 +156,17 @@ api:
   serviceAccount:
     create: true
     name:
+  affinity: {}
+  # Azure specific example
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
   ## Add custom annotations to the api pod
   # podAnnotations:
   #   name: value
@@ -182,6 +211,17 @@ cr:
   serviceAccount:
     create: true
     name:
+  affinity: {}
+  # Azure specific example
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
   ## Add custom annotations to the cr gateway pod
   # podAnnotations:
   #   name: value
@@ -205,6 +245,17 @@ genericGateway:
     name:
   ingress:
     enabled: false
+  affinity: {}
+  # Azure specific example
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
   ## Add custom annotations to the generic gateway pod
   # podAnnotations:
   #   name: value
@@ -270,6 +321,17 @@ vacuum:
   successfulJobsHistoryLimit: 10
   ## The maximum number of failed vacuum jobs to retain in the cluster.
   failedJobsHistoryLimit: 10
+  affinity: {}
+  # Azure specific example
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
 
 ## DEVELOPMENT ONLY: Use this for off-ACS development
 ## Before enabling this, log into the acr registry with Docker and then

@@ -32,6 +32,10 @@ spec:
         role: gateway
         type: dockerhub
     spec:
+      {{ if .Values.cr.affinity }}
+      affinity:
+{{ toYaml .Values.cr.affinity | indent 8}}
+      {{- end }}
       serviceAccountName: {{ $serviceAccount }}
       containers:
       - name: {{ .Chart.Name }}

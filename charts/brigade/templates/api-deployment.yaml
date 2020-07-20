@@ -29,6 +29,10 @@ spec:
         app: {{ template "brigade.fullname" . }}-api
         role: api
     spec:
+      {{ if .Values.api.affinity }}
+      affinity:
+{{ toYaml .Values.api.affinity | indent 8}}
+      {{- end }}
       serviceAccountName: {{ $serviceAccount }}
       containers:
       - name: {{ .Chart.Name }}
