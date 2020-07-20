@@ -59,6 +59,7 @@ github:
   # ...
   # ...
   # -----END RSA PRIVATE KEY-----
+# sshCert:
 
 ## OPTIONAL: Items in the 'secrets' array can be mounted as environment variables by
 ## the brigade.js
