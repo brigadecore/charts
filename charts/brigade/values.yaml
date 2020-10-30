@@ -104,6 +104,7 @@ controller:
   serviceAccount:
     create: true
     name:
+    imagePullSecrets: []
   ## Add custom annotations to the controller pod
   # podAnnotations:
   #   name: value
@@ -138,6 +139,7 @@ api:
   serviceAccount:
     create: true
     name:
+    imagePullSecrets: []
   ## Add custom annotations to the api pod
   # podAnnotations:
   #   name: value
@@ -150,6 +152,15 @@ worker:
   serviceAccount:
     create: true
     name: brigade-worker
+    ## This SA is the default used by all workers and jobs unless otherwise
+    ## specified. Referencing image pull secrets (which must be created
+    ## separately) from this SA is a convenient way to ensure those image pull
+    ## secrets are available to ALL workers and jobs (or at least those using
+    ## this SA) WITHOUT needing to explicitly reference those image pull secrets
+    ## on every worker or job definition. This is useful, for instance, for
+    ## circumventing some registries' rate limits by using a paid account with
+    ## unlimited image pulls.
+    imagePullSecrets: []
   # tag:
   # pullPolicy: IfNotPresent
   # defaultBuildStorageClass:
@@ -182,6 +193,7 @@ cr:
   serviceAccount:
     create: true
     name:
+    imagePullSecrets: []
   ## Add custom annotations to the cr gateway pod
   # podAnnotations:
   #   name: value
@@ -203,6 +215,7 @@ genericGateway:
   serviceAccount:
     create: true
     name:
+    imagePullSecrets: []
   ingress:
     enabled: false
   ## Add custom annotations to the generic gateway pod
@@ -262,6 +275,7 @@ vacuum:
   serviceAccount:
     create: true
     name:
+    imagePullSecrets: []
   ## The following options have to do with cleaning up after the vacuum jobs
   ## themselves so completed jobs don't endlessly accumulate in the cluster.
   ##

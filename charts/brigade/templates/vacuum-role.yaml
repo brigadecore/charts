@@ -12,6 +12,9 @@ metadata:
     helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     app.kubernetes.io/instance: "{{ .Release.Name }}"
     app.kubernetes.io/managed-by: "{{ .Release.Service }}"
+{{- range $imagePullSecret := .Values.vacuum.serviceAccount.imagePullSecrets }}
+- name: {{ $imagePullSecret }}
+{{- end }}
 {{ if .Values.rbac.enabled }}
 ---
 kind: Role
