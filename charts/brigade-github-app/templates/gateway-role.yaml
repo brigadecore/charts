@@ -10,6 +10,10 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
+imagePullSecrets:
+{{- range $imagePullSecret := .Values.serviceAccount.imagePullSecrets }}
+- name: {{ $imagePullSecret }}
+{{- end }}
 {{ end }}
 {{ if .Values.rbac.enabled }}
 ---
