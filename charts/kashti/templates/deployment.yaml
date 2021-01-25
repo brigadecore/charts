@@ -1,7 +1,9 @@
+{{ $fullname := include "fullname" . }}
+{{ $serviceAccount := default $fullname .Values.serviceAccount.name }}
 apiVersion: {{ template "deployment.apiVersion" . }}
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ $fullname }}
   labels:
     app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
@@ -25,6 +27,7 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
+      serviceAccountName: {{ $serviceAccount }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
@@ -49,10 +52,10 @@ spec:
       volumes:
         - name: config-js
           configMap:
-            name: {{ template "fullname" . }}-js
+            name: {{ $fullname }}-js
         - name: config-nginx
           configMap:
-            name: {{ template "fullname" . }}-nginx
+            name: {{ $fullname }}-nginx
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
