@@ -3,6 +3,9 @@
 
 Helm charts for the [Brigade](https://github.com/brigadecore/brigade) project.
 
+**Note**: the charts in this repo are for Brigade v1.  For Brigade v2 charts,
+see the [charts][v2 charts] directory in the [v2 branch].
+
 # Contributing Guidelines
 
 This Brigade project accepts contributions via GitHub pull requests. This
@@ -89,3 +92,6 @@ $ git pull upstream master
 $ git tag kashti-v1.2.0
 $ git push upstream --tags
 ```
+
+[v2 charts]: https://github.com/brigadecore/brigade/tree/v2/charts
+[v2 branch]: https://github.com/brigadecore/brigade/tree/v2
