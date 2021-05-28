@@ -4,6 +4,7 @@ rbac:
 serviceAccount:
   create: true
   name: 
+  imagePullSecrets: []
 
 ## Image configuration
 registry: brigadecore
