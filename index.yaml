@@ -613,6 +613,15 @@ entries:
   brigade-project:
   - apiVersion: v1
     appVersion: v1.0.0
+    created: "2021-07-19T21:01:52.107468638Z"
+    description: Create a Brigade project
+    digest: 358165cdf9bfacf1f498a334d4d238cbd2e74609aee9d07d3466f74a5e8a1b7d
+    name: brigade-project
+    urls:
+    - brigade-project-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v1
+    appVersion: v1.0.0
     created: "2020-01-06T19:06:47.649018837Z"
     description: Create a Brigade project
     digest: 47f6f2e953d5d616f32991583058d4e49c09b2c5c6b1ebba858145df2233169d
@@ -871,4 +880,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2021-01-26T19:22:47.909349902Z"
+generated: "2021-07-19T21:01:52.106544699Z"
