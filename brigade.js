@@ -8,7 +8,7 @@ const releaseTagRegex = /^refs\/tags\/([A-Za-z0-9\-]+)\-v([0-9]+(?:\.[0-9]+)*(?:
 class HelmJob extends Job {
   constructor (name) {
     super(name);
-    this.image = "dtzar/helm-kubectl:2.14.1";
+    this.image = "dtzar/helm-kubectl:3.5.0";
     this.imageForcePull = true;
     this.tasks = [
       "apk upgrade 1>/dev/null",
@@ -33,7 +33,6 @@ function build(e, project, chartName, chartVersion) {
   builder.storage.enabled = true;
 
   builder.tasks.push(
-    "helm init -c",
     // Needed for fetching brigade's sub-charts (kashti, etc.)
     "helm repo add brigade https://brigadecore.github.io/charts",
     `echo "Building chart: ${chartName} with version: ${chartVersion}"`,
