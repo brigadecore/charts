@@ -18,9 +18,11 @@ service:
   internalPort: 80
 ingress:
   enabled: false
+  # From Kubernetes 1.18+ this field is supported in case your ingress controller supports it. When set, you do not need to add the ingress class as annotation.
+  ingressClassName:
   ## Used to create Ingress record (should used with service.type: ClusterIP).
   hosts:
-  - chart-example.local
+    - chart-example.local
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
