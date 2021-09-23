@@ -46,3 +46,7 @@ Return the appropriate apiVersion for a networking object.
 {{- define "networking.apiVersion.isStable" -}}
   {{- eq (include "networking.apiVersion" .) "networking.k8s.io/v1" -}}
 {{- end -}}
+
+{{- define "networking.apiVersion.supportIngressClassName" -}}
+  {{- semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- end -}}

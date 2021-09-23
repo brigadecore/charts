@@ -1,5 +1,6 @@
 {{- if .Values.ingress.enabled -}}
 {{- $networkingApiIsStable := eq (include "networking.apiVersion.isStable" .) "true" -}}
+{{- $networkingApiSupportsIngressClassName := eq (include "networking.apiVersion.supportIngressClassName" .) "true" -}}
 {{- $serviceName := include "fullname" . -}}
 {{- $servicePort := .Values.service.externalPort -}}
 apiVersion: {{ template "networking.apiVersion" . }}
@@ -16,7 +17,7 @@ metadata:
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
-  {{- if .Values.ingress.ingressClassName }}
+  {{- if and (.Values.ingress.ingressClassName) ($networkingApiSupportsIngressClassName) }}
   ingressClassName: {{ .Values.ingress.ingressClassName }}
   {{- end }}
   rules:
