@@ -1,4 +1,6 @@
 {{- if .Values.genericGateway.ingress.enabled -}}
+{{- $networkingApiIsStable := eq (include "networking.apiVersion.isStable" .) "true" -}}
+{{- $networkingApiSupportsIngressClassName := eq (include "networking.apiVersion.supportIngressClassName" .) "true" -}}
 {{- $serviceName := include "brigade.genericGateway.fullname" . -}}
 {{- $servicePort := .Values.genericGateway.service.externalPort -}}
 {{- $paths := .Values.genericGateway.ingress.paths -}}
@@ -16,16 +18,29 @@ metadata:
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
+  {{- if and (.Values.ingress.ingressClassName) ($networkingApiSupportsIngressClassName) }}
+  ingressClassName: {{ .Values.ingress.ingressClassName }}
+  {{- end }}
   rules:
     {{- range $host := .Values.genericGateway.ingress.hosts }}
     - host: {{ $host }}
       http:
         paths:
           {{- range $path := $paths }}
+          {{- if $networkingApiIsStable }}
+          - path: {{ $path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $serviceName }}
+                port:
+                  number: {{ $servicePort }}
+          {{- else }}
           - path: {{ $path }}
             backend:
               serviceName: {{ $serviceName }}
               servicePort: {{ $servicePort }}
+          {{- end }}
           {{- end -}}
     {{- end -}}
   {{- if .Values.genericGateway.ingress.tls }}
