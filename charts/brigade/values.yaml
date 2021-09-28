@@ -133,6 +133,8 @@ api:
   #   initialDelaySeconds: 20
   ingress:
     enabled: false
+    # From Kubernetes 1.18+ this field is supported in case your ingress controller supports it. When set, you do not need to add the ingress class as annotation.
+    ingressClassName:
     hosts: []
     paths:
     - /
@@ -218,6 +220,8 @@ genericGateway:
     imagePullSecrets: []
   ingress:
     enabled: false
+    # From Kubernetes 1.18+ this field is supported in case your ingress controller supports it. When set, you do not need to add the ingress class as annotation.
+    ingressClassName:
   ## Add custom annotations to the generic gateway pod
   # podAnnotations:
   #   name: value

@@ -20,6 +20,8 @@ service:
 
 ingress:
   enabled: true
+  # From Kubernetes 1.18+ this field is supported in case your ingress controller supports it. When set, you do not need to add the ingress class as annotation.
+  ingressClassName:
   ## Used to create an Ingress record.
   hosts:
   - gh-app.example.com
