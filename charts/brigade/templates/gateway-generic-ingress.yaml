@@ -18,8 +18,8 @@ metadata:
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
-  {{- if and (.Values.ingress.ingressClassName) ($networkingApiSupportsIngressClassName) }}
-  ingressClassName: {{ .Values.ingress.ingressClassName }}
+  {{- if and (.Values.genericGateway.ingress.ingressClassName) ($networkingApiSupportsIngressClassName) }}
+  ingressClassName: {{ .Values.genericGateway.ingress.ingressClassName }}
   {{- end }}
   rules:
     {{- range $host := .Values.genericGateway.ingress.hosts }}
