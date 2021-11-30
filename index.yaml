@@ -821,6 +821,15 @@ entries:
   kashti:
   - apiVersion: v1
     appVersion: v0.4.0
+    created: "2021-11-30T03:25:16.23923292Z"
+    description: A Helm chart for Kubernetes
+    digest: 4f5ccd7a5758a36f3d7d86206aef553fc4b61a1277908fcd0275f8f0423b0f47
+    name: kashti
+    urls:
+    - kashti-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v1
+    appVersion: v0.4.0
     created: "2021-01-26T19:05:16.504516808Z"
     description: A Helm chart for Kubernetes
     digest: 3e397e596d49cb91a2e14389b29f04f1225e8c6e10babaed11d98bf6aa7737f6
@@ -880,4 +889,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-19T21:01:52.106544699Z"
+generated: "2021-11-30T03:25:16.238263752Z"
