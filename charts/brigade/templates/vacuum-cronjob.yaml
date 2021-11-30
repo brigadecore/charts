@@ -1,6 +1,6 @@
 {{ if .Values.vacuum.enabled }}{{ $fullname := include "brigade.vacuum.fullname" .}}
 {{ $serviceAccount := default "brigade-vacuum" .Values.vacuum.serviceAccount.name }}
-apiVersion: batch/v1beta1
+apiVersion: {{ template "batch.apiVersion" . }}
 kind: CronJob
 metadata:
   name: {{ $fullname }}
