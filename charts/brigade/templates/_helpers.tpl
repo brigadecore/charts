@@ -67,3 +67,14 @@ Return the appropriate apiVersion for a networking object.
 {{- define "networking.apiVersion.supportIngressClassName" -}}
   {{- semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion -}}
 {{- end -}}
+
+{{/*
+Return the appropriate apiVersion for a batch object.
+*/}}
+{{- define "batch.apiVersion" -}}
+{{- if semverCompare "<1.21-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- print "batch/v1beta1" -}}
+{{- else -}}
+{{- print "batch/v1" -}}
+{{- end -}}
+{{- end -}}
