@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   brigade:
   - apiVersion: v1
+    appVersion: v1.5.0
+    created: "2021-11-30T18:55:22.028534713Z"
+    dependencies:
+    - condition: kashti.enabled
+      name: kashti
+      repository: https://brigadecore.github.io/charts
+      version: 0.7.0
+    - condition: brigade-github-app.enabled
+      name: brigade-github-app
+      repository: https://brigadecore.github.io/charts
+      version: 0.8.0
+    - alias: gw
+      condition: gw.enabled
+      name: brigade-github-oauth
+      repository: https://brigadecore.github.io/charts
+      version: 0.4.0
+    description: Brigade provides event-driven scripting of Kubernetes pipelines.
+    digest: 51368ebf560d96091e2ba7eb4190c242e9410653b10077184277262a76fa51d5
+    name: brigade
+    urls:
+    - brigade-1.10.0.tgz
+    version: 1.10.0
+  - apiVersion: v1
     appVersion: v1.4.0
     created: "2021-11-30T16:58:10.955900308Z"
     dependencies:
@@ -935,4 +958,4 @@ entries:
     urls:
     - kashti-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-30T16:58:10.953338627Z"
+generated: "2021-11-30T18:55:22.025723916Z"
