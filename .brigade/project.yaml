@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://schemas.brigade.sh/schemas-v2/project.json
+apiVersion: brigade.sh/v2
+kind: Project
+metadata:
+  id: charts
+description: Brigade v1.x charts built with Brigade 2!
+spec:
+  eventSubscriptions:
+    - source: brigade.sh/github
+      qualifiers:
+        repo: brigadecore/charts
+      types:
+        - check_run:rerequested
+        - check_suite:requested
+        - check_suite:rerequested
+        - release:published
+  workerTemplate:
+    logLevel: DEBUG
+    git:
+      cloneURL: https://github.com/brigadecore/charts.git
+    useWorkspace: true
