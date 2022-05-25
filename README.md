@@ -1,3 +1,9 @@
+> ⚠️&nbsp;&nbsp;This repo contains Helm charts for components of the Brigade
+> v1.x ecosystem. Brigade v1.x reached end-of-life on June 1, 2022 and as a
+> result, this repository is no longer maintained.
+>
+> Note that each Brigade v2.x-compatible component now keeps its chart source
+> with the rest of its source code and uses OCI registries to host the charts.
 
 # Brigade Charts
 
